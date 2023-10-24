@@ -1,5 +1,4 @@
 import UIKit
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -12,9 +11,5 @@ class ViewController: UIViewController {
         generator.alpha = 1
         let nextGeneretor = generator
         nextGeneretor.alpha = 1
-        print(color.alpha)
-        print(nextColor.alpha)
-        print(generator.alpha)
-        print(nextGeneretor.alpha)
     }
 }
