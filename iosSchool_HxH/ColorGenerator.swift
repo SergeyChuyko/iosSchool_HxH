@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct Color {
     var alpha: Brightness
@@ -16,12 +17,21 @@ struct Color {
     }
 }
 
-class ColorGenerator {
+protocol ColorGeneratorProtocol {
+    var alpha: Double { get set }
+    var colorCodes: [Double] { get }
+    func createColorv() -> UIColor
+    init(alpha: Double)
+}
+
+class ColorGenerator: ColorGeneratorProtocol {
     var alpha: Double
     var colorCodes: [ Double ] = [0, 51, 102, 153, 204, 255]
-    init(alpha: Double) {
+    let whireColor: UIColor = .white
+    required init(alpha: Double) {
         self.alpha = alpha
     }
+
 }
 
 enum Brightness: Double {
@@ -34,5 +44,10 @@ enum Brightness: Double {
         case .average: return "Средний"
         case .bright: return "Яркий"
         }
+    }
+}
+extension ColorGeneratorProtocol {
+    func createColorv() -> UIColor {
+        UIColor(white: 1, alpha: alpha)
     }
 }
