@@ -32,6 +32,29 @@ class ColorGenerator: ColorGeneratorProtocol {
         self.alpha = alpha
     }
 
+    func changeColorCodes(completion: ([Double]) -> Void) {
+        completion([])
+
+    }
+
+    func changeColor(completion: () -> [Double]) {
+        print(completion())
+    }
+
+    func test() {
+        changeColorCodes { [weak self] newColorCodes in
+            self?.colorCodes = newColorCodes
+        }
+
+        changeColor { [weak self] in
+            guard let self = self else {
+                return []
+            }
+            self.colorCodes = [0001, 0011, 0101, 1111]
+            return self.colorCodes
+        }
+    }
+
 }
 
 enum Brightness: Double {
