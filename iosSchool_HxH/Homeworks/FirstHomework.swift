@@ -27,6 +27,19 @@ struct LocationsList {
 }
 
 class Character {
+    enum Gender: String, CaseIterable {
+        case female = "Female"
+        case male = "Male"
+        case genderless = "Genderless"
+        case unknown = "unknown"
+    }
+
+    enum Status: String, CaseIterable {
+        case alive = "Alive"
+        case dead = "Dead"
+        case unknown = "unknown"
+    }
+
     let id: Int
     let name: String
     let species: String
@@ -35,17 +48,7 @@ class Character {
     let episode: [String]
     let gender: Gender
     let status: Status
-    enum Gender: String, CaseIterable {
-        case female = "Female"
-        case male = "Male"
-        case genderless = "Genderless"
-        case unknown = "unknown"
-    }
-    enum Status: String, CaseIterable {
-        case alive = "Alive"
-        case dead = "Dead"
-        case unknown = "unknown"
-    }
+
     init(
         id: Int,
         name: String,
@@ -70,22 +73,15 @@ class Character {
 class CharacterGenerator {
     func generateSomeCharacter() -> Character {
         let idCharacter = Int.random(in: 1...99)
-        let name = "Character: \(idCharacter)"
-        let species = "Species: \(idCharacter)"
-        let image = "\(idCharacter).JPEG"
-        let url = "CharacterURL: https://www.\(idCharacter).com"
-        let episode = ["Episode number: \(idCharacter)"]
-        let gender = Character.Gender.allCases.randomElement() ?? .unknown
-        let status = Character.Status.allCases.randomElement() ?? .unknown
         return Character(
             id: idCharacter,
-            name: name,
-            species: species,
-            image: image,
-            url: url,
-            episode: episode,
-            gender: gender,
-            status: status
+            name: "Character: \(idCharacter)",
+            species: "Species: \(idCharacter)",
+            image: "\(idCharacter).JPEG",
+            url: "CharacterURL: https://www.\(idCharacter).com",
+            episode: ["Episode number: \(idCharacter)"],
+            gender: Character.Gender.allCases.randomElement() ?? .unknown,
+            status: Character.Status.allCases.randomElement() ?? .unknown
         )
     }
 }
