@@ -14,11 +14,9 @@
 		359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4D2AE119D30079EEA1 /* Assets.xcassets */; };
 		359CCE512AE119D30079EEA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */; };
 		35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E582AE69BD700E10B2A /* ColorGenerator.swift */; };
-first-homework
 		35D05E5C2AE6B2E100E10B2A /* FirstHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E5B2AE6B2E100E10B2A /* FirstHomework.swift */; };
 
 		35D05E5F2AEAA5CE00E10B2A /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */; };
-develop
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +29,11 @@ develop
 		359CCE502AE119D30079EEA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		359CCE522AE119D30079EEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35D05E582AE69BD700E10B2A /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
-first-homework
+
 		35D05E5B2AE6B2E100E10B2A /* FirstHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomework.swift; sourceTree = "<group>"; };
 
 		35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-develop
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +70,9 @@ develop
 				359CCE462AE119D20079EEA1 /* SceneDelegate.swift */,
 				359CCE482AE119D20079EEA1 /* ViewController.swift */,
 				35D05E582AE69BD700E10B2A /* ColorGenerator.swift */,
-first-homework
 				35D05E5D2AE6B2ED00E10B2A /* Homeworks */,
 
 				35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */,
-develop
 				359CCE4A2AE119D20079EEA1 /* Main.storyboard */,
 				359CCE4D2AE119D30079EEA1 /* Assets.xcassets */,
 				359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */,
@@ -94,7 +90,6 @@ develop
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
 /* Begin PBXNativeTarget section */
 		359CCE402AE119D20079EEA1 /* iosSchool_HxH */ = {
 			isa = PBXNativeTarget;
@@ -115,7 +110,6 @@ develop
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
-
 /* Begin PBXProject section */
 		359CCE392AE119D20079EEA1 /* Project object */ = {
 			isa = PBXProject;
