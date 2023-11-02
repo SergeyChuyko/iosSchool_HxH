@@ -4,14 +4,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var color = Color(red: 1, green: 1, blue: 1)
-        color.alpha = .bright
-        var nextColor = color
-        nextColor.alpha = .average
-        let generator  = ColorGenerator(alpha: 0.5)
-        generator.alpha = 1
-        let nextGeneretor = generator
-        nextGeneretor.alpha = 1
+
+        let characterGenerator = CharacterGenerator()
+        let characterGeneratorProtocol: CharacterGeneratorProtocol = characterGenerator
+
+        guard characterGenerator === characterGeneratorProtocol else {
+            print("characterGenerator и characterGenerator - разные объекты")
+            return
+        }
+
+        print("characterGenerator и characterGenerator - один и тот же объект")
 
     }
 }
