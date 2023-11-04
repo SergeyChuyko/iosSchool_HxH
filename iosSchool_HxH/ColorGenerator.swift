@@ -55,6 +55,25 @@ class ColorGenerator: ColorGeneratorProtocol {
         }
     }
 
+    func convertToArray<T>(element: T) -> [T] {
+        [element]
+    }
+
+    func printAlpha<Generator>(generator: Generator) where Generator: ColorGeneratorProtocol {
+        print(generator.alpha)
+    }
+
+    func printAlphaSecond<T: ColorGeneratorProtocol>(generator: T) {
+        print(generator.alpha)
+    }
+
+    func printAnyAlpha(generator: Any) {
+        let gen = generator as? ColorGeneratorProtocol
+
+        guard let generator = generator as? ColorGeneratorProtocol else {return}
+        print(generator.alpha)
+    }
+
 }
 
 enum Brightness: Double {
@@ -74,3 +93,15 @@ extension ColorGeneratorProtocol {
         UIColor(white: 1, alpha: alpha)
     }
 }
+
+class Paletta<CustomColor> {
+    let colors: [CustomColor]
+
+    init(colors: [CustomColor]) {
+        self.colors = colors
+    }
+
+}
+
+
+
