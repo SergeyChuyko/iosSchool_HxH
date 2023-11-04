@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol CharacterGeneratorProtocol: AnyObject {
+    func generateSomeCharacter() -> Character
+}
+
 struct Location {
     let id: Int
     let name: String
@@ -70,7 +74,7 @@ class Character {
     }
 }
 
-class CharacterGenerator {
+class CharacterGenerator: CharacterGeneratorProtocol {
     func generateSomeCharacter() -> Character {
         let idCharacter = Int.random(in: 1...99)
         return Character(

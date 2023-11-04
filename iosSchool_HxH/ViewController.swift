@@ -4,6 +4,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let characterGenerator = CharacterGenerator()
+        let characterGeneratorProtocol: CharacterGeneratorProtocol = characterGenerator
+
+        guard characterGenerator === characterGeneratorProtocol else {
+            print("characterGenerator и characterGenerator - разные объекты")
+            return
+        }
+
+        print("characterGenerator и characterGenerator - один и тот же объект")
         view.backgroundColor = .darkGray
 
         let arrayInt = [1, 2, 3, 4, 5, 6, 7, 8]
