@@ -88,4 +88,32 @@ class CharacterGenerator: CharacterGeneratorProtocol {
             status: Character.Status.allCases.randomElement() ?? .unknown
         )
     }
+
+    private func generateCharacterName() -> String {
+        let idCharacter = Int.random(in: 0...99)
+        return "Character \(idCharacter)"
+    }
+
+    func generateNameOne(completion: (String) -> Void) {
+        let characterName = generateCharacterName()
+        completion(characterName)
+    }
+
+    func generateNameTwo(completion: () -> (String)) {
+        let characterName = generateCharacterName()
+        print(characterName)
+    }
+
+    func generateNameTree() -> ((String) -> Void) {
+        let characterName = generateCharacterName()
+        return { _ in
+            print("Generated name: \(characterName)")
+        }
+    }
+
+    func generateNameFour() -> (() -> String) {
+        let characterName = generateCharacterName()
+        return { characterName }
+    }
+
 }
