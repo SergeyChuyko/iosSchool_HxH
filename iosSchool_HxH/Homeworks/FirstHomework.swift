@@ -90,8 +90,7 @@ class CharacterGenerator: CharacterGeneratorProtocol {
     }
 
     private func generateCharacterName() -> String {
-        let idCharacter = Int.random(in: 0...99)
-        return "Character \(idCharacter)"
+        return "Character \(Int.random(in: 0...99))"
     }
 
     func generateNameOne(completion: (String) -> Void) {
@@ -106,8 +105,8 @@ class CharacterGenerator: CharacterGeneratorProtocol {
 
     func generateNameTree() -> ((String) -> Void) {
         let characterName = generateCharacterName()
-        return { _ in
-            print("Generated name: \(characterName)")
+        return { name in
+            print("Generated name: \(characterName), nickname: \(name)")
         }
     }
 

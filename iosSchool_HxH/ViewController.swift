@@ -21,7 +21,7 @@ class ViewController: UIViewController {
             return ""
         }
         let functiongNumberThree = characterGenerator.generateNameTree()
-        functiongNumberThree("")
+        functiongNumberThree("MEGABRAIN007")
         let functiongNumberFour = characterGenerator.generateNameFour()
         let forFour = functiongNumberFour()
         print(forFour)
