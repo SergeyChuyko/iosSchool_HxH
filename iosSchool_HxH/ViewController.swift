@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         }
 
         print("characterGenerator и characterGenerator - один и тот же объект")
-        view.backgroundColor = .darkGray
 
         let arrayInt = [1, 2, 3, 4, 5, 6, 7, 8]
         let result = arrayInt.filter { elem in
