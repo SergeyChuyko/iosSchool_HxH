@@ -94,25 +94,21 @@ class CharacterGenerator: CharacterGeneratorProtocol {
     }
 
     func generateNameOne(completion: (String) -> Void) {
-        let characterName = generateCharacterName()
-        completion(characterName)
+        completion(generateCharacterName())
     }
 
     func generateNameTwo(completion: () -> (String)) {
-        let characterName = generateCharacterName()
-        print(characterName)
+        print("Character: \(completion())")
     }
 
-    func generateNameTree() -> ((String) -> Void) {
-        let characterName = generateCharacterName()
-        return { name in
-            print("Generated name: \(characterName), nickname: \(name)")
+    func generateNameTree() -> (String) -> Void {
+        {
+            print("Generated name: \(self.generateCharacterName()), nickname: \($0)")
         }
     }
 
-    func generateNameFour() -> (() -> String) {
-        let characterName = generateCharacterName()
-        return { characterName }
+    func generateNameFour() -> () -> String {
+        generateCharacterName
     }
 
 }

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
             print(name)
         }
         characterGenerator.generateNameTwo {
-            return ""
+            return "SomeNameTestForSecondGenerator"
         }
         let functiongNumberThree = characterGenerator.generateNameTree()
         functiongNumberThree("SomeNameTest")
