@@ -16,14 +16,22 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow?) {
         self.window = window
+        let coordinator = assembly.splashCoordinator { [weak self] in
+            self?.authBootstrap()
+        }
+        setRoot(viewController: coordinator.make())
+    }
 
+    private func authBootstrap() {
         setRoot(viewController: assembly.authCoordinator().make())
     }
 
     private func setRoot(viewController: UIViewController?) {
-        guard let window, let viewController else { return }
+        guard let window, let viewController else {
+            return
+        }
+
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }
-
 }
