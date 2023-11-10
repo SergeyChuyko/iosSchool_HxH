@@ -24,11 +24,8 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let characterGenerator = CharacterGenerator()
-        var allCharacters: [Character] = []
-
-        for _ in 1...10 {
-            let generatedCharacter = characterGenerator.generateSomeCharacter()
-            allCharacters.append(generatedCharacter)
+        var allCharacters: [Character] = (1...10).map { _ in
+            return characterGenerator.generateSomeCharacter()
         }
 
         let maleCharacters = allCharacters.filter { $0.gender == .male }
@@ -59,9 +56,7 @@ class AuthViewController: UIViewController {
                 characterGenerator.generateSomeCharacter()
             }
         }
-        let totalNameLength = allCharacters.reduce(0) { result, character in
-            return result + character.name.count
-        }
+        let totalNameLength = allCharacters.reduce(0) { $0 + $1.name.count }
 
         print("Все персонажи:")
         allCharacters.forEach { print($0.name, "-", $0.gender.rawValue) }
@@ -79,7 +74,7 @@ class AuthViewController: UIViewController {
         charactersForEpisodesCompactMap.forEach {
             $0.forEach {print($0.name)}
         }
-        print("Сумма длин всех имен: \(totalNameLength)")
+        print("\nСумма длин всех имен: \(totalNameLength)")
 
     }
 }
