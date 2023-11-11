@@ -44,17 +44,14 @@ class AuthViewController: UIViewController {
             )
         }
         let episodeNames = ["Episode 1", "Episode 2", "Episode 3"]
-
         let charactersForEpisodesMap = episodeNames.map { _ in
             (1...3).map { _ in
                 CharacterGenerator().generateSomeCharacter()
             }
-
         }
         let charactersForEpisodesCompactMap = episodeNames.compactMap { _ in
             (1...3).compactMap { _ in
                 CharacterGenerator().generateSomeCharacter()
-
             }
         }
 
