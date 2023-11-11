@@ -24,8 +24,8 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let characterGenerator = CharacterGenerator()
-        var allCharacters: [Character] = (1...10).map { _ in
-            return characterGenerator.generateSomeCharacter()
+        let allCharacters: [Character] = (1...10).map { _ in
+            characterGenerator.generateSomeCharacter()
         }
 
         let maleCharacters = allCharacters.filter { $0.gender == .male }
@@ -45,17 +45,19 @@ class AuthViewController: UIViewController {
         }
         let episodeNames = ["Episode 1", "Episode 2", "Episode 3"]
 
-        let charactersForEpisodesMap = episodeNames.map { episode in
-            (0..<1).map { _ in
-                characterGenerator.generateSomeCharacter()
+        let charactersForEpisodesMap = episodeNames.map { _ in
+            (1...3).map { _ in
+                CharacterGenerator().generateSomeCharacter()
+            }
+
+        }
+        let charactersForEpisodesCompactMap = episodeNames.compactMap { _ in
+            (1...3).compactMap { _ in
+                CharacterGenerator().generateSomeCharacter()
+
             }
         }
 
-        let charactersForEpisodesCompactMap = episodeNames.compactMap { episode in
-            (0..<1).compactMap { _ in
-                characterGenerator.generateSomeCharacter()
-            }
-        }
         let totalNameLength = allCharacters.reduce(0) { $0 + $1.name.count }
 
         print("Все персонажи:")
