@@ -20,7 +20,7 @@ extension Assembly: AuthAssembly {
     }
 
     func authDataProvider() -> AuthDataProvider {
-        return AuthDataProviderImp()
+        return AuthDataProviderImp(apiClient: apiClient)
     }
 
     func authCoordinator() -> AuthCoordinator {

@@ -11,25 +11,6 @@ protocol CharacterGeneratorProtocol: AnyObject {
     func generateSomeCharacter() -> Character
 }
 
-struct Location {
-    let id: Int
-    let name: String
-    let type: String
-    let dimension: String
-    let residents: [String]
-}
-
-struct LocationsList {
-    struct Info {
-        let count: Int
-        let pages: Int
-        let next: String?
-        let prev: String?
-    }
-    let info: Info
-    let results: [Location]
-}
-
 class Character {
     enum Gender: String, CaseIterable {
         case female = "Female"
