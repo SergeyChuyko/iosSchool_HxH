@@ -74,6 +74,13 @@ class AuthViewController: UIViewController {
             $0.forEach {print($0.name)}
         }
         print("\nСумма длин всех имен: \(totalNameLength)")
+        login()
+        }
 
+    func login() {
+        dataProvider.auth(login: "Sergo", password: "Jopa1999") { token, error in
+            print(token ?? "\nнет токена")
+            print(error?.rawValue ?? "нет ошибки")
+        }
     }
 }
