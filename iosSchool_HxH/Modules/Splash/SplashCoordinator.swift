@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class SplashCoordinator: BaseCoordinator<SplashCoordinator.Context> {
-
     struct Context {
         let onSuccess: (() -> Void)?
     }

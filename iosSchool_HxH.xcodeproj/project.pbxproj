@@ -155,12 +155,12 @@
 		3513C7BC2B048C160044D80B /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				3513C7C22B048C330044D80B /* RegistrationViewController.swift */,
+				3513C7C12B048C330044D80B /* RegistrationView.swift */,
+				3513C7BE2B048C330044D80B /* RegistrationViewData.swift */,
+				3513C7C02B048C330044D80B /* RegistrationDataProvider.swift */,
 				3513C7BF2B048C330044D80B /* RegistrationAssembly.swift */,
 				3513C7BD2B048C330044D80B /* RegistrationCoordinator.swift */,
-				3513C7C02B048C330044D80B /* RegistrationDataProvider.swift */,
-				3513C7C12B048C330044D80B /* RegistrationView.swift */,
-				3513C7C22B048C330044D80B /* RegistrationViewController.swift */,
-				3513C7BE2B048C330044D80B /* RegistrationViewData.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";

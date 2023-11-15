@@ -16,14 +16,20 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow?) {
         self.window = window
-        let coordinator = assembly.splashCoordinator { [weak self] in
-            self?.authBootstrap()
+        let coordinator = assembly.registrationCoordinator { [weak self] in
+            self?.registrationTest()
         }
         setRoot(viewController: coordinator.make())
     }
 
     private func authBootstrap() {
         setRoot(viewController: assembly.authCoordinator().make())
+    }
+
+    private func registrationTest() {
+        setRoot(viewController: assembly.registrationVC(onRegistrationSuccess: {
+            print("Сомнительноо, но Окей")
+        }))
     }
 
     private func setRoot(viewController: UIViewController?) {
