@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController<View: AuthView>: BaseViewController<View> {
 
     private let dataProvider: AuthDataProvider
 
@@ -23,6 +23,9 @@ class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        rootView.setView()
+
         let characterGenerator = CharacterGenerator()
         let allCharacters: [Character] = (1...10).map { _ in
             characterGenerator.generateSomeCharacter()

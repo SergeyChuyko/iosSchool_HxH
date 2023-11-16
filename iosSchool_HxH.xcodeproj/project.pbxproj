@@ -34,6 +34,8 @@
 		3513C7C62B048C330044D80B /* RegistrationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7C02B048C330044D80B /* RegistrationDataProvider.swift */; };
 		3513C7C72B048C330044D80B /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7C12B048C330044D80B /* RegistrationView.swift */; };
 		3513C7C82B048C330044D80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7C22B048C330044D80B /* RegistrationViewController.swift */; };
+		3513C7CB2B06408F0044D80B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7CA2B06408F0044D80B /* BaseViewController.swift */; };
+		3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7CD2B0642E80044D80B /* AuthViewImp.xib */; };
 		359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE442AE119D20079EEA1 /* AppDelegate.swift */; };
 		359CCE472AE119D20079EEA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE462AE119D20079EEA1 /* SceneDelegate.swift */; };
 		359CCE492AE119D20079EEA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE482AE119D20079EEA1 /* ViewController.swift */; };
@@ -72,6 +74,8 @@
 		3513C7C02B048C330044D80B /* RegistrationDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataProvider.swift; sourceTree = "<group>"; };
 		3513C7C12B048C330044D80B /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3513C7C22B048C330044D80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		3513C7CA2B06408F0044D80B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3513C7CD2B0642E80044D80B /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		359CCE412AE119D20079EEA1 /* iosSchool_HxH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool_HxH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359CCE442AE119D20079EEA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		359CCE462AE119D20079EEA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,12 +112,13 @@
 		3513C77E2AF922540044D80B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				3513C7CC2B0642C10044D80B /* Subviews */,
 				3513C77F2AF922DE0044D80B /* AuthViewController.swift */,
 				3513C7812AF9230B0044D80B /* AuthView.swift */,
 				3513C7832AF9242F0044D80B /* AuthViewData.swift */,
 				3513C7852AF924570044D80B /* AuthDataProvider.swift */,
-				3513C7872AF924B60044D80B /* AuthAssembly.swift */,
 				3513C7892AF9260F0044D80B /* AuthCoordinator.swift */,
+				3513C7872AF924B60044D80B /* AuthAssembly.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -165,6 +170,23 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		3513C7C92B06406B0044D80B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3513C7792AF9184E0044D80B /* BaseCoordinator.swift */,
+				3513C7CA2B06408F0044D80B /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3513C7CC2B0642C10044D80B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3513C7CD2B0642E80044D80B /* AuthViewImp.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		359CCE382AE119D20079EEA1 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +206,7 @@
 		359CCE432AE119D20079EEA1 /* iosSchool_HxH */ = {
 			isa = PBXGroup;
 			children = (
+				3513C7C92B06406B0044D80B /* Common */,
 				3513C7AE2B025AE80044D80B /* ApiClient */,
 				3513C7A62B0251200044D80B /* Models */,
 				3513C77D2AF9222E0044D80B /* Modules */,
@@ -196,7 +219,6 @@
 				359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */,
 				359CCE522AE119D30079EEA1 /* Info.plist */,
 				35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */,
-				3513C7792AF9184E0044D80B /* BaseCoordinator.swift */,
 				3513C77B2AF919370044D80B /* AppCoordinator.swift */,
 			);
 			path = iosSchool_HxH;
@@ -271,6 +293,7 @@
 			files = (
 				359CCE512AE119D30079EEA1 /* LaunchScreen.storyboard in Resources */,
 				359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */,
+				3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +334,7 @@
 				3513C7B62B0260110044D80B /* AuthApiClient.swift in Sources */,
 				3513C7A82B0251470044D80B /* Location.swift in Sources */,
 				3513C7932AFD13330044D80B /* SplashCoordinator.swift in Sources */,
+				3513C7CB2B06408F0044D80B /* BaseViewController.swift in Sources */,
 				35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */,
 				3513C7C72B048C330044D80B /* RegistrationView.swift in Sources */,
 				3513C7C32B048C330044D80B /* RegistrationCoordinator.swift in Sources */,
