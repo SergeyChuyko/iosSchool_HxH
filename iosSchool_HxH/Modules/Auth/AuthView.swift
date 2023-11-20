@@ -37,6 +37,4 @@ class AuthViewImp: UIView, AuthView {
 
     }
 
-    
-
 }
