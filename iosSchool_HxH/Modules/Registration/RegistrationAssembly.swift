@@ -20,7 +20,7 @@ extension Assembly: RegistrationAssembly {
     }
 
     func registrationDataProvider() -> RegistrationDataProvider {
-        return RegistrationDataProviderImp()
+        return RegistrationDataProviderImp(apiClient: apiClient)
     }
 
     func registrationCoordinator(onRegistrationSuccess: (() -> Void)?) -> RegistrationCoordinator {

@@ -32,5 +32,13 @@ class RegistrationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         onRegistrationSuccess?()
+        registrationTest()
+    }
+
+    func registrationTest() {
+        dataProvider.registration(username: "SomeName", password: "1234") { token, error in
+            print(token?.token ?? "No token")
+            print(error?.rawValue ?? "No error")
+        }
     }
 }

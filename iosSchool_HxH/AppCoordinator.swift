@@ -16,14 +16,18 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow?) {
         self.window = window
-        let coordinator = assembly.registrationCoordinator {
-            print("Test002")
+        let coordinator = assembly.registrationCoordinator { [weak self] in
+            self?.registrationBootstrap()
         }
         setRoot(viewController: coordinator.make())
     }
 
     private func authBootstrap() {
         setRoot(viewController: assembly.authCoordinator().make())
+    }
+
+    private func registrationBootstrap() {
+    
     }
 
     private func setRoot(viewController: UIViewController?) {

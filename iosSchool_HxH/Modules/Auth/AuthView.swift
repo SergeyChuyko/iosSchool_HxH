@@ -36,7 +36,4 @@ class AuthViewImp: UIView, AuthView {
         labelView.backgroundColor = UIColor(red: 196, green: 196, blue: 196, alpha: 0.65)
 
     }
-
-    
-
 }

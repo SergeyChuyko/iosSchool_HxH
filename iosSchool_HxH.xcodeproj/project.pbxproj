@@ -36,6 +36,7 @@
 		3513C7C82B048C330044D80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7C22B048C330044D80B /* RegistrationViewController.swift */; };
 		3513C7CB2B06408F0044D80B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7CA2B06408F0044D80B /* BaseViewController.swift */; };
 		3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7CD2B0642E80044D80B /* AuthViewImp.xib */; };
+		3513C7D62B0B2D870044D80B /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */; };
 		359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE442AE119D20079EEA1 /* AppDelegate.swift */; };
 		359CCE472AE119D20079EEA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE462AE119D20079EEA1 /* SceneDelegate.swift */; };
 		359CCE492AE119D20079EEA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE482AE119D20079EEA1 /* ViewController.swift */; };
@@ -76,6 +77,7 @@
 		3513C7C22B048C330044D80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3513C7CA2B06408F0044D80B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3513C7CD2B0642E80044D80B /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
+		3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		359CCE412AE119D20079EEA1 /* iosSchool_HxH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool_HxH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359CCE442AE119D20079EEA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		359CCE462AE119D20079EEA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				3513C7B12B025B680044D80B /* NetworkConstants.swift */,
 				3513C7B32B025CB00044D80B /* ApiError.swift */,
 				3513C7B52B0260110044D80B /* AuthApiClient.swift */,
+				3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				3513C7AA2B0259C60044D80B /* LocationsList.swift in Sources */,
 				359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */,
 				3513C78A2AF9260F0044D80B /* AuthCoordinator.swift in Sources */,
+				3513C7D62B0B2D870044D80B /* RegistrationApiClient.swift in Sources */,
 				3513C77C2AF919370044D80B /* AppCoordinator.swift in Sources */,
 				3513C77A2AF9184E0044D80B /* BaseCoordinator.swift in Sources */,
 				3513C7B42B025CB00044D80B /* ApiError.swift in Sources */,
