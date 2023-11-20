@@ -13,9 +13,8 @@ class RegistrationViewController: UIViewController {
     private let dataProvider: RegistrationDataProvider
     var onRegistrationSuccess: (() -> Void)?
 
-    init(dataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
+    init(dataProvider: RegistrationDataProvider) {
         self.dataProvider = dataProvider
-        self.onRegistrationSuccess = onRegistrationSuccess
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -31,12 +30,11 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        onRegistrationSuccess?()
         registrationTest()
     }
 
     func registrationTest() {
-        dataProvider.registration(username: "SomeName", password: "1234") { token, error in
+        dataProvider.registration(username: "SomeName2", password: "12345678") { token, error in
             print(token?.token ?? "No token")
             print(error?.rawValue ?? "No error")
         }
