@@ -8,7 +8,6 @@
 import Foundation
 
 protocol AuthApiClient {
-
     func auth(login: String,
               password: String,
               onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void

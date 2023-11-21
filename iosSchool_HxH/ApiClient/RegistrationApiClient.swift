@@ -8,7 +8,6 @@
 import Foundation
 
 protocol RegistrationApiClient {
-
     func registration(username: String,
                       password: String,
                       onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void

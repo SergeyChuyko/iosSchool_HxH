@@ -27,4 +27,11 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         rootView.setView()
 
     }
+
+    func someLogin() {
+        dataProvider.auth(login: "SomeTest", password: "12345678") { token, error in
+            print(token ?? "No token")
+            print(error?.rawValue ?? "no error")
+        }
+    }
 }
