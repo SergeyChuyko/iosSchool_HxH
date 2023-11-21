@@ -14,8 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i6T-th-Ped">
+                    <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLx-8M-gDo">
-                    <rect key="frame" x="120" y="274.66666666666669" width="191" height="26.333333333333314"/>
+                    <rect key="frame" x="126" y="274.66666666666669" width="179" height="26.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -62,6 +65,9 @@
                     <buttonConfiguration key="configuration" style="plain" title="Button">
                         <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="enterButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="aVT-hp-e1Z"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orz-1H-x4P">
                     <rect key="frame" x="16" y="812" width="398" height="40"/>
@@ -74,6 +80,9 @@
                     <buttonConfiguration key="configuration" style="plain" title="Button">
                         <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Rcf-UC-od5"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -83,26 +92,32 @@
                 <constraint firstItem="A5J-Ag-vUZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="1xX-Vt-WoA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Orz-1H-x4P" secondAttribute="bottom" constant="46" id="5gd-Db-5bJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Orz-1H-x4P" secondAttribute="trailing" constant="16" id="61k-SP-jSf"/>
+                <constraint firstAttribute="bottom" secondItem="i6T-th-Ped" secondAttribute="bottom" id="6ND-pN-Hrn"/>
                 <constraint firstItem="A5J-Ag-vUZ" firstAttribute="top" secondItem="rFh-Tu-9KS" secondAttribute="bottom" constant="127" id="6Uk-MU-kom"/>
-                <constraint firstItem="FLx-8M-gDo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="120" id="CB2-xO-K2n"/>
+                <constraint firstItem="FLx-8M-gDo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="400" constant="126" id="CB2-xO-K2n"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bxe-UA-Jou" secondAttribute="trailing" constant="32" id="HRM-Jd-NG8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FdH-o8-bpT" secondAttribute="trailing" constant="32" id="QVw-iK-tlx"/>
                 <constraint firstItem="Orz-1H-x4P" firstAttribute="top" secondItem="A5J-Ag-vUZ" secondAttribute="bottom" constant="12" id="RBX-5v-eN2"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FLx-8M-gDo" secondAttribute="trailing" constant="119" id="Y8U-VK-whT"/>
+                <constraint firstItem="i6T-th-Ped" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="X7H-1F-rrh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FLx-8M-gDo" secondAttribute="trailing" constant="125" id="Y8U-VK-whT"/>
                 <constraint firstItem="rFh-Tu-9KS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="YOw-yx-bAy"/>
+                <constraint firstItem="i6T-th-Ped" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZDe-Hq-A7s"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A5J-Ag-vUZ" secondAttribute="trailing" constant="16" id="Zu9-Du-qic"/>
                 <constraint firstItem="Bxe-UA-Jou" firstAttribute="top" secondItem="FdH-o8-bpT" secondAttribute="bottom" constant="18" id="aeF-g8-3uZ"/>
                 <constraint firstItem="Orz-1H-x4P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="cX0-pa-qaz"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eaQ-Mg-f5X" secondAttribute="trailing" constant="160" id="cYg-sx-xKN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rFh-Tu-9KS" secondAttribute="trailing" constant="32" id="djb-Ei-dGa"/>
+                <constraint firstItem="i6T-th-Ped" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="f76-wo-kR6"/>
                 <constraint firstItem="rFh-Tu-9KS" firstAttribute="top" secondItem="Bxe-UA-Jou" secondAttribute="bottom" constant="18" id="gTR-Wc-Gg5"/>
                 <constraint firstItem="FdH-o8-bpT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="hYj-Z1-vKp"/>
+                <constraint firstItem="i6T-th-Ped" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jqa-on-TgQ"/>
+                <constraint firstItem="i6T-th-Ped" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kp6-F6-9SW"/>
                 <constraint firstItem="Bxe-UA-Jou" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="msQ-wu-hdz"/>
-                <constraint firstItem="eaQ-Mg-f5X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="160" id="vll-Ay-GA1"/>
+                <constraint firstItem="eaQ-Mg-f5X" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="rc9-df-3Kd"/>
                 <constraint firstItem="FLx-8M-gDo" firstAttribute="top" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="220" id="vpQ-8O-TKw"/>
                 <constraint firstItem="eaQ-Mg-f5X" firstAttribute="top" secondItem="FLx-8M-gDo" secondAttribute="bottom" constant="30" id="xMb-d0-b8w"/>
             </constraints>
             <connections>
+                <outlet property="backgroundimageView" destination="i6T-th-Ped" id="QHr-WM-vD4"/>
                 <outlet property="cancelButton" destination="Orz-1H-x4P" id="XNd-F3-6OG"/>
                 <outlet property="enterButton" destination="A5J-Ag-vUZ" id="sEP-oO-AWL"/>
                 <outlet property="imageView" destination="eaQ-Mg-f5X" id="wrm-M1-Yw1"/>
