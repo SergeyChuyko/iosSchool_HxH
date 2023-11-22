@@ -17,21 +17,25 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow?) {
         self.window = window
         let coordinator = assembly.splashCoordinator { [weak self] in
-            self?.authBootstrap()
+            self?.charactersBootstrap()
         }
         setRoot(viewController: coordinator.make())
     }
 
     private func authBootstrap() {
-        setRoot(viewController: assembly.charactersCoordinator().make())
+        setRoot(viewController: assembly.authCoordinator().make())
     }
-
+    
     private func registrationBootstrap() {
-        setRoot(viewController: assembly.registrationCoordinator().make())
+        setRoot(viewController: assembly.registrationCoordinator { print("Closure registration is Done!") }.make())
     }
 
     private func locationsBootstrap() {
         setRoot(viewController: assembly.locationsCoordinator().make())
+    }
+
+    private func charactersBootstrap() {
+        setRoot(viewController: assembly.charactersCoordinator().make())
     }
 
     private func setRoot(viewController: UIViewController?) {

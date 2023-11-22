@@ -10,13 +10,15 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
 
-    private let dataProvider: RegistrationDataProvider
+    private let registrationDataProvider: RegistrationDataProvider
     var onRegistrationSuccess: (() -> Void)?
 
-    init(dataProvider: RegistrationDataProvider) {
-        self.dataProvider = dataProvider
+    init(registrationDataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
+        self.registrationDataProvider = registrationDataProvider
+        self.onRegistrationSuccess = onRegistrationSuccess
+
         super.init(nibName: nil, bundle: nil)
-    }
+        }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -34,9 +36,10 @@ class RegistrationViewController: UIViewController {
     }
 
     func registrationTest() {
-        dataProvider.registration(username: "SomeName3", password: "12345678") { token, error in
+        registrationDataProvider.registration(username: "SomeName3", password: "12345678") { token, error in
             print(token?.token ?? "No token")
             print(error?.rawValue ?? "No error")
         }
+        self.onRegistrationSuccess?()
     }
 }

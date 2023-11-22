@@ -39,11 +39,9 @@
 		3513C7D62B0B2D870044D80B /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */; };
 		359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE442AE119D20079EEA1 /* AppDelegate.swift */; };
 		359CCE472AE119D20079EEA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE462AE119D20079EEA1 /* SceneDelegate.swift */; };
-		359CCE492AE119D20079EEA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE482AE119D20079EEA1 /* ViewController.swift */; };
 		359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4D2AE119D30079EEA1 /* Assets.xcassets */; };
 		359CCE512AE119D30079EEA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */; };
 		35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E582AE69BD700E10B2A /* ColorGenerator.swift */; };
-		35D05E5C2AE6B2E100E10B2A /* FirstHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E5B2AE6B2E100E10B2A /* FirstHomework.swift */; };
 		35D05E5F2AEAA5CE00E10B2A /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */; };
 		35E1C4722B0CC1B900A66EE5 /* LocationsApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C4712B0CC1B900A66EE5 /* LocationsApiClient.swift */; };
 		35E1C4752B0CC37300A66EE5 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C4742B0CC37300A66EE5 /* LocationsViewController.swift */; };
@@ -96,12 +94,10 @@
 		359CCE412AE119D20079EEA1 /* iosSchool_HxH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool_HxH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359CCE442AE119D20079EEA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		359CCE462AE119D20079EEA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		359CCE482AE119D20079EEA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		359CCE4D2AE119D30079EEA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		359CCE502AE119D30079EEA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		359CCE522AE119D30079EEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35D05E582AE69BD700E10B2A /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
-		35D05E5B2AE6B2E100E10B2A /* FirstHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomework.swift; sourceTree = "<group>"; };
 		35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		35E1C4712B0CC1B900A66EE5 /* LocationsApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsApiClient.swift; sourceTree = "<group>"; };
 		35E1C4742B0CC37300A66EE5 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
@@ -134,11 +130,11 @@
 		3513C77D2AF9222E0044D80B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3513C77E2AF922540044D80B /* Auth */,
 				35E1C4842B0CC95E00A66EE5 /* Characters */,
 				35E1C4732B0CC32700A66EE5 /* Locations */,
 				3513C7BC2B048C160044D80B /* Registration */,
 				3513C78B2AFD12880044D80B /* Splash */,
-				3513C77E2AF922540044D80B /* Auth */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -250,9 +246,7 @@
 				3513C77D2AF9222E0044D80B /* Modules */,
 				359CCE442AE119D20079EEA1 /* AppDelegate.swift */,
 				359CCE462AE119D20079EEA1 /* SceneDelegate.swift */,
-				359CCE482AE119D20079EEA1 /* ViewController.swift */,
 				35D05E582AE69BD700E10B2A /* ColorGenerator.swift */,
-				35D05E5D2AE6B2ED00E10B2A /* Homeworks */,
 				359CCE4D2AE119D30079EEA1 /* Assets.xcassets */,
 				359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */,
 				359CCE522AE119D30079EEA1 /* Info.plist */,
@@ -260,14 +254,6 @@
 				3513C77B2AF919370044D80B /* AppCoordinator.swift */,
 			);
 			path = iosSchool_HxH;
-			sourceTree = "<group>";
-		};
-		35D05E5D2AE6B2ED00E10B2A /* Homeworks */ = {
-			isa = PBXGroup;
-			children = (
-				35D05E5B2AE6B2E100E10B2A /* FirstHomework.swift */,
-			);
-			path = Homeworks;
 			sourceTree = "<group>";
 		};
 		35E1C4732B0CC32700A66EE5 /* Locations */ = {
@@ -391,7 +377,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				359CCE492AE119D20079EEA1 /* ViewController.swift in Sources */,
 				3513C78F2AFD12EC0044D80B /* SplashView.swift in Sources */,
 				35D05E5F2AEAA5CE00E10B2A /* Assembly.swift in Sources */,
 				3513C7C82B048C330044D80B /* RegistrationViewController.swift in Sources */,
@@ -431,7 +416,6 @@
 				3513C7952AFD13740044D80B /* SplashViewController.swift in Sources */,
 				3513C7C62B048C330044D80B /* RegistrationDataProvider.swift in Sources */,
 				35E1C4832B0CC88600A66EE5 /* Character.swift in Sources */,
-				35D05E5C2AE6B2E100E10B2A /* FirstHomework.swift in Sources */,
 				3513C7912AFD130E0044D80B /* SplashViewData.swift in Sources */,
 				3513C7882AF924B60044D80B /* AuthAssembly.swift in Sources */,
 				3513C7972AFD13EB0044D80B /* SplashAssembly.swift in Sources */,

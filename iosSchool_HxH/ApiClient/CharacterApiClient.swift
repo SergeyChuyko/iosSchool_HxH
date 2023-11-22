@@ -8,8 +8,7 @@
 import Foundation
 
 protocol CharacterApiClient {
-    func getCharacter(id: Int, onRequestCompleted: @escaping (Character?, ApiError?) -> Void
-    )
+    func getCharacter(id: Int, onRequestCompleted: @escaping (Character?, ApiError?) -> Void)
 }
 
 extension ApiClient: CharacterApiClient {
