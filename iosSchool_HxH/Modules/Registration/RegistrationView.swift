@@ -16,10 +16,10 @@ class RegistrationViewImp: UIView, RegistrationView {
 
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var backgroundimageView: UIImageView!
-    @IBOutlet private var labelView: UIView!
+    @IBOutlet private var labelView: UILabel!
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
-    @IBOutlet private var reenterPasswordTextField: UITextField!
+    @IBOutlet private var repeatPasswordTextField: UITextField!
     @IBOutlet private var enterButton: UIButton!
     @IBOutlet private var cancelButton: UIButton!
 
@@ -27,9 +27,15 @@ class RegistrationViewImp: UIView, RegistrationView {
         imageView.image = UIImage(named: "reg-image")
         backgroundimageView.image = UIImage(named: "reg-background")
 
+        labelView.minimumScaleFactor = 0.5
+        labelView.adjustsFontSizeToFitWidth = true
+
         applyTextFieldStyles(to: loginTextField, placeholderText: "Введите логин")
         applyTextFieldStyles(to: passwordTextField, placeholderText: "Введите пароль")
-        applyTextFieldStyles(to: reenterPasswordTextField, placeholderText: "Повторите пароль")
+        applyTextFieldStyles(to: repeatPasswordTextField, placeholderText: "Повторите пароль")
+        applyShadows(to: loginTextField)
+        applyShadows(to: passwordTextField)
+        applyShadows(to: repeatPasswordTextField)
 
         enterButton.setTitle("Готово", for: .normal)
         applyButtonSettings(to: enterButton)
@@ -39,11 +45,13 @@ class RegistrationViewImp: UIView, RegistrationView {
         applyButtonSettings(to: cancelButton)
         applyShadows(to: cancelButton)
     }
+
     func applyButtonSettings(to button: UIButton) {
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
         button.backgroundColor = UIColor(named: "button-color")
     }
+
     func applyTextFieldStyles(to textField: UITextField, placeholderText: String) {
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
@@ -55,6 +63,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.backgroundColor = UIColor.white
     }
+
     func applyShadows(to view: UIView) {
         view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: 10).cgPath
         view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -62,9 +71,11 @@ class RegistrationViewImp: UIView, RegistrationView {
         view.layer.shadowRadius = 8
         view.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
+
     @IBAction func enterButtonTapped(_ sender: UIButton) {
         print("You tapped enter button")
     }
+
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         print("You tapped cancel button")
     }
