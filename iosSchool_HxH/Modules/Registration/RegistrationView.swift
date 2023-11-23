@@ -27,9 +27,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         imageView.image = UIImage(named: "reg-image")
         backgroundimageView.image = UIImage(named: "reg-background")
 
-        labelView.minimumScaleFactor = 0.5
-        labelView.adjustsFontSizeToFitWidth = true
-
         applyTextFieldStyles(to: loginTextField, placeholderText: "Введите логин")
         applyTextFieldStyles(to: passwordTextField, placeholderText: "Введите пароль")
         applyTextFieldStyles(to: repeatPasswordTextField, placeholderText: "Повторите пароль")
@@ -48,24 +45,33 @@ class RegistrationViewImp: UIView, RegistrationView {
 
     func applyButtonSettings(to button: UIButton) {
         button.layer.cornerRadius = 10
-        button.layer.masksToBounds = true
         button.backgroundColor = UIColor(named: "button-color")
+        button.tintColor = .white
     }
 
     func applyTextFieldStyles(to textField: UITextField, placeholderText: String) {
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.32, green: 0.31, blue: 0.31, alpha: 1)]
+            attributes: [NSAttributedString.Key.foregroundColor:
+                UIColor(
+                    red: 0.318,
+                    green: 0.306,
+                    blue: 0.306,
+                    alpha: 1
+            )]
         )
+        textField.placeholder = placeholderText
         textField.layer.cornerRadius = 15
         textField.layer.borderWidth = 1
-        textField.layer.masksToBounds = true
+        textField.clipsToBounds = true
+        textField.borderStyle = .none
         textField.layer.borderColor = UIColor.black.cgColor
-        textField.backgroundColor = UIColor.white
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
+        textField.leftViewMode = .always
+        textField.backgroundColor = .white
     }
 
     func applyShadows(to view: UIView) {
-        view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: 10).cgPath
         view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 8
