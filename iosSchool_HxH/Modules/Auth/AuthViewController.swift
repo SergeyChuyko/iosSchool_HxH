@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import SPIndicator
+import PKHUD
 
 class AuthViewController<View: AuthView>: BaseViewController<View> {
 
+    var onOpenRegistration: (() -> Void)?
+    private var onOpenLogin: (() -> Void)?
+
     private let dataProvider: AuthDataProvider
 
-    init(dataProvider: AuthDataProvider) {
+    init(dataProvider: AuthDataProvider, onOpenLogin: (() -> Void)?) {
         self.dataProvider = dataProvider
-
+        self.onOpenLogin = onOpenLogin
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,65 +30,32 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         super.viewDidLoad()
 
         rootView.setView()
+        rootView.delegate = self
 
-        let characterGenerator = CharacterGenerator()
-        let allCharacters: [Character] = (1...10).map { _ in
-            characterGenerator.generateSomeCharacter()
         }
+}
 
-        let maleCharacters = allCharacters.filter { $0.gender == .male }
-        let charactersWithA = allCharacters.filter { $0.name.lowercased().contains("a") }
-        let names = ["Ann", "Sergo", "Max", "Vlad", "Kirill"]
-        let charactersFromNames = names.map { name in
-            return Character(
-                id: Int.random(in: 1...99),
-                name: name,
-                species: "Human",
-                image: "\(name.lowercased()).jpeg",
-                url: "CharacterURL: https://www.\(name.lowercased()).com",
-                episode: ["Episode number: 1"],
-                gender: Character.Gender.allCases.randomElement() ?? .unknown,
-                status: Character.Status.allCases.randomElement() ?? .unknown
-            )
-        }
-        let episodeNames = ["Episode 1", "Episode 2", "Episode 3"]
-        let charactersForEpisodesMap = episodeNames.map { _ in
-            (1...3).map { _ in
-                CharacterGenerator().generateSomeCharacter()
-            }
-        }
-        let charactersForEpisodesCompactMap = episodeNames.compactMap { _ in
-            (1...3).compactMap { _ in
-                CharacterGenerator().generateSomeCharacter()
+//MARK: - AuthViewDelegate
+
+extension AuthViewController: AuthViewDelegate {
+    func loginButtonDidTap(login: String, password: String) {
+            HUD.show(.progress)
+            dataProvider.auth(login: login, password: password) { [weak self] token, error in
+                DispatchQueue.main.async {
+                    HUD.hide()
+                }
+                guard let self, token != nil else {
+                    DispatchQueue.main.async {
+                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
+                    }
+                    return
+                }
+                self.onOpenLogin?()
             }
         }
 
-        let totalNameLength = allCharacters.reduce(0) { $0 + $1.name.count }
-
-        print("Все персонажи:")
-        allCharacters.forEach { print($0.name, "-", $0.gender.rawValue) }
-        print("\nМужские персонажи:")
-        maleCharacters.forEach { print($0.name, "-", $0.gender.rawValue) }
-        print("\nПерсонажи с буквой |а| в имени:")
-        charactersWithA.forEach {print($0.name)}
-        print("\nПерсонажи из массива имен:")
-        charactersFromNames.forEach {print($0.name)}
-        print("\nПерсонажи для каждой серии (map):")
-        charactersForEpisodesMap.forEach {
-            $0.forEach {print($0.name)}
-        }
-        print("\nПерсонажи для каждой серии (compactMap):")
-        charactersForEpisodesCompactMap.forEach {
-            $0.forEach {print($0.name)}
-        }
-        print("\nСумма длин всех имен: \(totalNameLength)")
-        login()
-        }
-
-    func login() {
-        dataProvider.auth(login: "Sergo", password: "Jopa1999") { token, error in
-            print(token ?? "\nнет токена")
-            print(error?.rawValue ?? "нет ошибки")
-        }
+    func registrationButtonDidTap() {
+        onOpenRegistration?()
     }
+
 }

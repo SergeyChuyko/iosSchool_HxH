@@ -82,9 +82,9 @@
                                                 <constraint firstAttribute="height" constant="40" id="TEn-fH-owZ"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Войти"/>
                                             <connections>
-                                                <action selector="loginDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="FM0-Ag-vXS"/>
+                                                <action selector="loginDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="fA8-vZ-UpV"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgb-CW-s90">
@@ -93,7 +93,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="B7D-SH-q0b"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Зарегистрироваться"/>
                                         </button>
                                     </subviews>
                                 </stackView>
