@@ -25,7 +25,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     private func authBootstrap() {
         setRoot(viewController: assembly.authCoordinator().make())
     }
-    
     private func registrationBootstrap() {
         setRoot(viewController: assembly.registrationCoordinator { print("Closure registration is Done!") }.make())
     }
