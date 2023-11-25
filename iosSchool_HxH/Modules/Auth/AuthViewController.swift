@@ -31,8 +31,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
         rootView.setView()
         rootView.delegate = self
-
-
     }
 
     func someLogin() {
@@ -59,7 +57,7 @@ extension AuthViewController: AuthViewDelegate {
                     }
                     return
                 }
-                self.onOpenLogin?()
+                onOpenLogin?()
             }
         }
 

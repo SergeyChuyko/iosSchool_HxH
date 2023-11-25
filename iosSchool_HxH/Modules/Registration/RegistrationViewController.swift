@@ -7,12 +7,8 @@
 
 import Foundation
 import UIKit
-
-
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
-    private let dataProvider: RegistrationDataProvider
 
-class RegistrationViewController: UIViewController {
 
     private let registrationDataProvider: RegistrationDataProvider
 

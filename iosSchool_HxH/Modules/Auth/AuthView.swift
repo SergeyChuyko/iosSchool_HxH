@@ -68,8 +68,6 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
-
-
     // MARK: - Private
 
     @IBAction private func loginDidTap(_ sender: UIButton) {
@@ -81,8 +79,6 @@ class AuthViewImp: UIView, AuthView {
     @objc private func registrationDidTap() {
         delegate?.registrationButtonDidTap()
     }
-
-
 
     @objc private func keyboardWillShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
@@ -104,6 +100,4 @@ class AuthViewImp: UIView, AuthView {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-
-
 }

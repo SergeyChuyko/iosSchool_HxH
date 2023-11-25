@@ -15,13 +15,8 @@ protocol RegistrationAssembly {
 
 extension Assembly: RegistrationAssembly {
 
-
     func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController<RegistrationViewImp> {
-        .init(dataProvider: registrationDataProvider(), onRegistrationSuccess: onRegistrationSuccess)
-
-    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController {
         .init(registrationDataProvider: registrationDataProvider(), onRegistrationSuccess: onRegistrationSuccess)
-
     }
 
     func registrationDataProvider() -> RegistrationDataProvider {
