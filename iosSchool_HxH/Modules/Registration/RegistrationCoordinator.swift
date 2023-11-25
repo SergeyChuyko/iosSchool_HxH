@@ -10,7 +10,7 @@ import UIKit
 
 class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> {
     struct Context {
-        let onRegistrationSuccess: (() -> Void)?
+        var onRegistrationSuccess: (() -> Void)?
     }
 
     override func make() -> UIViewController? {
