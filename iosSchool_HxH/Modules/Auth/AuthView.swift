@@ -82,6 +82,8 @@ class AuthViewImp: UIView, AuthView {
         delegate?.registrationButtonDidTap()
     }
 
+
+
     @objc private func keyboardWillShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
         guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
@@ -102,5 +104,6 @@ class AuthViewImp: UIView, AuthView {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
+
 
 }

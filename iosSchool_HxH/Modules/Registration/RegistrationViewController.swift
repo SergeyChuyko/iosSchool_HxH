@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 
+
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
+    private let dataProvider: RegistrationDataProvider
+
 class RegistrationViewController: UIViewController {
 
     private let registrationDataProvider: RegistrationDataProvider
+
     var onRegistrationSuccess: (() -> Void)?
 
     init(registrationDataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
@@ -26,8 +31,7 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .orange
+        rootView.setViewRegistration()
     }
 
     override func viewDidAppear(_ animated: Bool) {
