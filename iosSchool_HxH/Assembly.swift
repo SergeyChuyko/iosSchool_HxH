@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 class Assembly {
 
     var apiClient: ApiClient {
@@ -17,5 +19,15 @@ class Assembly {
 
     func appCoordinator() -> AppCoordinator {
         AppCoordinator(assembly: self, context: CoordinatorContext())
+    }
+
+    func rootTabBarController() -> UITabBarController {
+        TabBarController()
+    }
+
+    func rootNavigationController() -> UINavigationController {
+        let controller = BaseNavigationController()
+        controller.modalPresentationStyle = .fullScreen
+        return controller
     }
 }
