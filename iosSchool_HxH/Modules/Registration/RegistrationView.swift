@@ -22,8 +22,15 @@ class RegistrationViewImp: UIView, RegistrationView {
     @IBOutlet private var repeatPasswordTextField: UITextField!
     @IBOutlet private var enterButton: UIButton!
     @IBOutlet private var cancelButton: UIButton!
+    @IBOutlet private var mainView: UIView!
+    @IBOutlet private var scrollView: UIScrollView!
 
     func setViewRegistration() {
+
+        isUserInteractionEnabled = true
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidPat))
+        addGestureRecognizer(recognizer)
+        
         imageView.image = UIImage(named: "reg-image")
         backgroundimageView.image = UIImage(named: "reg-background")
 
@@ -41,6 +48,19 @@ class RegistrationViewImp: UIView, RegistrationView {
         cancelButton.setTitle("Назад", for: .normal)
         applyButtonSettings(to: cancelButton)
         applyShadows(to: cancelButton)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     private func applyButtonSettings(to button: UIButton) {
@@ -76,6 +96,26 @@ class RegistrationViewImp: UIView, RegistrationView {
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 8
         view.layer.shadowOffset = CGSize(width: 0, height: 5)
+    }
+
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+
+        scrollView.contentInset.bottom = keyboardHeight
+        scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
+    }
+
+    @objc private func viewDidPat() {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+
+    @objc private func keyboardWillHide() {
+        scrollView.contentOffset = .zero
+        scrollView.verticalScrollIndicatorInsets = .zero
     }
 
     @IBAction func enterButtonTapped(_ sender: UIButton) {

@@ -31,7 +31,7 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
         rootView.setView()
         rootView.delegate = self
-
+        someLogin()
 
     }
 
