@@ -49,6 +49,7 @@
 		35D5E4D12B0F894900E44F0A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */; };
 		35D5E4D42B0F925D00E44F0A /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 35D5E4D32B0F925D00E44F0A /* SPIndicator */; };
 		35D5E4D72B0F957F00E44F0A /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 35D5E4D62B0F957F00E44F0A /* PKHUD */; };
+		35D5E4DA2B0FC0D800E44F0A /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		35D5E4CB2B0F884000E44F0A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		35D5E4CE2B0F88A300E44F0A /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
 		35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +138,13 @@
 		3513C78B2AFD12880044D80B /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				35D5E4D82B0FC07300E44F0A /* Subviews */,
 				3513C7942AFD13740044D80B /* SplashViewController.swift */,
 				3513C78E2AFD12EC0044D80B /* SplashView.swift */,
 				3513C7902AFD130E0044D80B /* SplashViewData.swift */,
 				3513C78C2AFD12BB0044D80B /* SplashDataProvider.swift */,
-				3513C7962AFD13EB0044D80B /* SplashAssembly.swift */,
 				3513C7922AFD13330044D80B /* SplashCoordinator.swift */,
+				3513C7962AFD13EB0044D80B /* SplashAssembly.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -253,6 +256,14 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		35D5E4D82B0FC07300E44F0A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +333,7 @@
 			files = (
 				359CCE512AE119D30079EEA1 /* LaunchScreen.storyboard in Resources */,
 				359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */,
+				35D5E4DA2B0FC0D800E44F0A /* SplashViewImp.xib in Resources */,
 				3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

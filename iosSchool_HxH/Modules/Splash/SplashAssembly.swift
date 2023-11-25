@@ -8,14 +8,14 @@
 import Foundation
 
 protocol SplashAssembly {
-    func splashVC(onSuccess: (() -> Void)?) -> SplashViewController
+    func splashVC(onSuccess: (() -> Void)?) -> SplashViewController<SplashViewImp>
     func splashDataProvider() -> SplashDataProvider
     func splashCoordinator(onSuccess: (() -> Void)?) -> SplashCoordinator
 }
 
 extension Assembly: SplashAssembly {
 
-    func splashVC(onSuccess: (() -> Void)?) -> SplashViewController {
+    func splashVC(onSuccess: (() -> Void)?) -> SplashViewController<SplashViewImp> {
         .init(dataProvider: splashDataProvider(), onSuccess: onSuccess)
     }
 

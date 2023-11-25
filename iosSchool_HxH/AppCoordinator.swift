@@ -32,8 +32,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func setTabVC() {
-        let tabVC = assembly.rootTabBarController()
-
+    //    let tabVC = assembly.rootTabBarController()
     }
 /*
     private func setTabVC() {
