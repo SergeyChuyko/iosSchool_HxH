@@ -68,6 +68,8 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
+
+
     // MARK: - Private
 
     @IBAction private func loginDidTap(_ sender: UIButton) {
@@ -100,4 +102,5 @@ class AuthViewImp: UIView, AuthView {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
+
 }

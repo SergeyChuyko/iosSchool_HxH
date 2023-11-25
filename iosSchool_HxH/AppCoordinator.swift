@@ -17,7 +17,11 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow?) {
         self.window = window
         let coordinator = assembly.splashCoordinator { [weak self] in
+
+            self?.charactersBootstrap()
+
             self?.authBootstrap()
+
         }
         setRoot(viewController: coordinator.make())
     }
@@ -35,9 +39,23 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let tabVC = assembly.rootTabBarController()
 
     }
+
+    private func registrationBootstrap() {
+        setRoot(viewController: assembly.registrationCoordinator { print("Closure registration is Done!") }.make())
+    }
+
+    private func locationsBootstrap() {
+        setRoot(viewController: assembly.locationsCoordinator().make())
+    }
+
+    private func charactersBootstrap() {
+        setRoot(viewController: assembly.charactersCoordinator().make())
+    }
+
 /*
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
+
 
         let locationsCoord = assembly.locationsCoordinator()
         //let cabinetCoord = assembly.cabinetCoodrinator()

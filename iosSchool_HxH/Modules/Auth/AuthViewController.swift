@@ -32,6 +32,15 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         rootView.setView()
         rootView.delegate = self
 
+
+    }
+
+    func someLogin() {
+        dataProvider.auth(login: "SomeTest", password: "12345678") { token, error in
+            print(token ?? "No token")
+            print(error?.rawValue ?? "no error")
+        }
+
         }
 }
 
@@ -56,6 +65,7 @@ extension AuthViewController: AuthViewDelegate {
 
     func registrationButtonDidTap() {
         onOpenRegistration?()
+
     }
 
 }
