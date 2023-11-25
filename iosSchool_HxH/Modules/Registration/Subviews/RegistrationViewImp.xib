@@ -121,9 +121,9 @@
                 <outlet property="cancelButton" destination="Orz-1H-x4P" id="XNd-F3-6OG"/>
                 <outlet property="enterButton" destination="A5J-Ag-vUZ" id="sEP-oO-AWL"/>
                 <outlet property="imageView" destination="eaQ-Mg-f5X" id="wrm-M1-Yw1"/>
-                <outlet property="labelView" destination="FLx-8M-gDo" id="T8F-Xd-tOS"/>
                 <outlet property="loginTextField" destination="FdH-o8-bpT" id="Gxm-IM-uP7"/>
                 <outlet property="passwordTextField" destination="Bxe-UA-Jou" id="O0r-nX-n1u"/>
+                <outlet property="registrationLabel" destination="FLx-8M-gDo" id="PzA-tx-9Wb"/>
                 <outlet property="repeatPasswordTextField" destination="rFh-Tu-9KS" id="ZJX-2A-mau"/>
             </connections>
             <point key="canvasLocation" x="110.23255813953489" y="20.600858369098713"/>

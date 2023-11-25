@@ -16,7 +16,7 @@ class RegistrationViewImp: UIView, RegistrationView {
 
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var backgroundimageView: UIImageView!
-    @IBOutlet private var labelView: UILabel!
+    @IBOutlet private var registrationLabel: UILabel!
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var repeatPasswordTextField: UITextField!
@@ -43,13 +43,13 @@ class RegistrationViewImp: UIView, RegistrationView {
         applyShadows(to: cancelButton)
     }
 
-    func applyButtonSettings(to button: UIButton) {
+    private func applyButtonSettings(to button: UIButton) {
         button.layer.cornerRadius = 10
         button.backgroundColor = UIColor(named: "button-color")
         button.tintColor = .white
     }
 
-    func applyTextFieldStyles(to textField: UITextField, placeholderText: String) {
+    private func applyTextFieldStyles(to textField: UITextField, placeholderText: String) {
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
             attributes: [NSAttributedString.Key.foregroundColor:
@@ -71,7 +71,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         textField.backgroundColor = .white
     }
 
-    func applyShadows(to view: UIView) {
+    private func applyShadows(to view: UIView) {
         view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 8
