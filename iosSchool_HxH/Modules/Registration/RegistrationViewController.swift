@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
-
     private let registrationDataProvider: RegistrationDataProvider
 
     var onRegistrationSuccess: (() -> Void)?
