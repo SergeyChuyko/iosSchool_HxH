@@ -31,6 +31,11 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
         rootView.setView()
         rootView.delegate = self
+
+        someLogin()
+
+
+
     }
 
     func someLogin() {
@@ -42,7 +47,11 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         }
 }
 
+
+// MARK: - AuthViewDelegate
+
     // MARK: - AuthViewDelegate
+
 
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {

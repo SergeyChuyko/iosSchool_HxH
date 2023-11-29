@@ -38,10 +38,12 @@
 		3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7CD2B0642E80044D80B /* AuthViewImp.xib */; };
 		3513C7D32B0A0E5C0044D80B /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7D22B0A0E5C0044D80B /* RegistrationViewImp.xib */; };
 		3513C7D62B0B2D870044D80B /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */; };
+
 		352604402B14D1EF00EDD6ED /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526043E2B14D1EF00EDD6ED /* LocationCell.swift */; };
 		352604412B14D1EF00EDD6ED /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3526043F2B14D1EF00EDD6ED /* LocationCell.xib */; };
 		352604432B14D4DB00EDD6ED /* LocationsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352604422B14D4DB00EDD6ED /* LocationsCellData.swift */; };
 		352604462B14D7AD00EDD6ED /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352604452B14D7AD00EDD6ED /* NSObject+ClassName.swift */; };
+
 		359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE442AE119D20079EEA1 /* AppDelegate.swift */; };
 		359CCE472AE119D20079EEA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE462AE119D20079EEA1 /* SceneDelegate.swift */; };
 		359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4D2AE119D30079EEA1 /* Assets.xcassets */; };
@@ -175,8 +177,8 @@
 				3513C7812AF9230B0044D80B /* AuthView.swift */,
 				3513C7832AF9242F0044D80B /* AuthViewData.swift */,
 				3513C7852AF924570044D80B /* AuthDataProvider.swift */,
-				3513C7892AF9260F0044D80B /* AuthCoordinator.swift */,
 				3513C7872AF924B60044D80B /* AuthAssembly.swift */,
+				3513C7892AF9260F0044D80B /* AuthCoordinator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
