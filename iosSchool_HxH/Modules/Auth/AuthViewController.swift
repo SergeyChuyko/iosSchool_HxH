@@ -31,7 +31,10 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
         rootView.setView()
         rootView.delegate = self
+
         someLogin()
+
+
 
     }
 
@@ -44,7 +47,11 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         }
 }
 
+
 // MARK: - AuthViewDelegate
+
+    // MARK: - AuthViewDelegate
+
 
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {
@@ -53,13 +60,13 @@ extension AuthViewController: AuthViewDelegate {
                 DispatchQueue.main.async {
                     HUD.hide()
                 }
-                guard let self, token != nil else {
-                    DispatchQueue.main.async {
-                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
-                    }
-                    return
-                }
-                self.onOpenLogin?()
+//                guard let self, token != nil else {
+//                    DispatchQueue.main.async {
+//                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
+//                    }
+//                    return
+//                }
+                self?.onOpenLogin?()
             }
         }
 

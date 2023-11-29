@@ -8,13 +8,13 @@
 import Foundation
 
 protocol LocationsAssembly {
-    func locationsVC() -> LocationsViewController
+    func locationsVC() -> LocationsViewController<LocationsViewImp>
     func locationsDataProvider() -> LocationsDataProvider
     func locationsCoordinator() -> LocationsCoordinator
 }
 
 extension Assembly: LocationsAssembly {
-    func locationsVC() -> LocationsViewController {
+    func locationsVC() -> LocationsViewController<LocationsViewImp> {
         .init(locationsDataProvider: locationsDataProvider())
     }
 

@@ -38,6 +38,12 @@
 		3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7CD2B0642E80044D80B /* AuthViewImp.xib */; };
 		3513C7D32B0A0E5C0044D80B /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7D22B0A0E5C0044D80B /* RegistrationViewImp.xib */; };
 		3513C7D62B0B2D870044D80B /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */; };
+
+		352604402B14D1EF00EDD6ED /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526043E2B14D1EF00EDD6ED /* LocationCell.swift */; };
+		352604412B14D1EF00EDD6ED /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3526043F2B14D1EF00EDD6ED /* LocationCell.xib */; };
+		352604432B14D4DB00EDD6ED /* LocationsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352604422B14D4DB00EDD6ED /* LocationsCellData.swift */; };
+		352604462B14D7AD00EDD6ED /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352604452B14D7AD00EDD6ED /* NSObject+ClassName.swift */; };
+
 		359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE442AE119D20079EEA1 /* AppDelegate.swift */; };
 		359CCE472AE119D20079EEA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE462AE119D20079EEA1 /* SceneDelegate.swift */; };
 		359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4D2AE119D30079EEA1 /* Assets.xcassets */; };
@@ -98,6 +104,10 @@
 		3513C7CD2B0642E80044D80B /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		3513C7D22B0A0E5C0044D80B /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
+		3526043E2B14D1EF00EDD6ED /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		3526043F2B14D1EF00EDD6ED /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		352604422B14D4DB00EDD6ED /* LocationsCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsCellData.swift; sourceTree = "<group>"; };
+		352604452B14D7AD00EDD6ED /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		359CCE412AE119D20079EEA1 /* iosSchool_HxH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool_HxH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359CCE442AE119D20079EEA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		359CCE462AE119D20079EEA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +254,24 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		3526043D2B14D1BF00EDD6ED /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3526043E2B14D1EF00EDD6ED /* LocationCell.swift */,
+				3526043F2B14D1EF00EDD6ED /* LocationCell.xib */,
+				352604422B14D4DB00EDD6ED /* LocationsCellData.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		352604442B14D79900EDD6ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				352604452B14D7AD00EDD6ED /* NSObject+ClassName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		359CCE382AE119D20079EEA1 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +291,7 @@
 		359CCE432AE119D20079EEA1 /* iosSchool_HxH */ = {
 			isa = PBXGroup;
 			children = (
+				352604442B14D79900EDD6ED /* Extensions */,
 				35D5E4CD2B0F889200E44F0A /* UIKit */,
 				3513C7C92B06406B0044D80B /* Common */,
 				3513C7AE2B025AE80044D80B /* ApiClient */,
@@ -291,6 +320,7 @@
 		35E1C4732B0CC32700A66EE5 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				3526043D2B14D1BF00EDD6ED /* Subviews */,
 				35E1C4742B0CC37300A66EE5 /* LocationsViewController.swift */,
 				35E1C4762B0CC37A00A66EE5 /* LocationsView.swift */,
 				35E1C4782B0CC38200A66EE5 /* LocationsViewData.swift */,
@@ -381,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352604412B14D1EF00EDD6ED /* LocationCell.xib in Resources */,
 				3513C7D32B0A0E5C0044D80B /* RegistrationViewImp.xib in Resources */,
 				359CCE512AE119D30079EEA1 /* LaunchScreen.storyboard in Resources */,
 				359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */,
@@ -436,6 +467,7 @@
 				3513C7CB2B06408F0044D80B /* BaseViewController.swift in Sources */,
 				35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */,
 				35E1C4772B0CC37A00A66EE5 /* LocationsView.swift in Sources */,
+				352604402B14D1EF00EDD6ED /* LocationCell.swift in Sources */,
 				3513C7C72B048C330044D80B /* RegistrationView.swift in Sources */,
 				3513C7C32B048C330044D80B /* RegistrationCoordinator.swift in Sources */,
 				3513C7AA2B0259C60044D80B /* LocationsList.swift in Sources */,
@@ -460,8 +492,10 @@
 				3513C7952AFD13740044D80B /* SplashViewController.swift in Sources */,
 				3513C7C62B048C330044D80B /* RegistrationDataProvider.swift in Sources */,
 				35E1C4832B0CC88600A66EE5 /* Character.swift in Sources */,
+				352604462B14D7AD00EDD6ED /* NSObject+ClassName.swift in Sources */,
 				3513C7912AFD130E0044D80B /* SplashViewData.swift in Sources */,
 				3513C7882AF924B60044D80B /* AuthAssembly.swift in Sources */,
+				352604432B14D4DB00EDD6ED /* LocationsCellData.swift in Sources */,
 				3513C7972AFD13EB0044D80B /* SplashAssembly.swift in Sources */,
 				35E1C47F2B0CC3A200A66EE5 /* LocationsCoordinator.swift in Sources */,
 				35E1C4882B0CC98000A66EE5 /* CharactersView.swift in Sources */,
