@@ -7,10 +7,10 @@
 
 import Foundation
 import UIKit
+
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     private let registrationDataProvider: RegistrationDataProvider
-
     var onRegistrationSuccess: (() -> Void)?
 
     init(registrationDataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
@@ -26,19 +26,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         rootView.setViewRegistration()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        registrationTest()
-    }
-
-    func registrationTest() {
-        registrationDataProvider.registration(username: "SomeName3", password: "12345678") { token, error in
-            print(token?.token ?? "No token")
-            print(error?.rawValue ?? "No error")
-        }
-        self.onRegistrationSuccess?()
     }
 }

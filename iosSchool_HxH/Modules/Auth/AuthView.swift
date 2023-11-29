@@ -100,4 +100,5 @@ class AuthViewImp: UIView, AuthView {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
+
 }
