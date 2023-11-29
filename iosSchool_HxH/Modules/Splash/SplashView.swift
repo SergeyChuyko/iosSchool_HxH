@@ -20,6 +20,4 @@ class SplashViewImp: UIView, SplashView {
         backgroundColor = UIColor(named: "iceberg-color")
         launchImageView.image = UIImage(named: "launch-image")
     }
-
-
 }
