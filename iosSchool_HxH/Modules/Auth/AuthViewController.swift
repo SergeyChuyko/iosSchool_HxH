@@ -31,11 +31,18 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
         rootView.setView()
         rootView.delegate = self
+    }
+
+    func someLogin() {
+        dataProvider.auth(login: "SomeTest", password: "12345678") { token, error in
+            print(token ?? "No token")
+            print(error?.rawValue ?? "no error")
+        }
 
         }
 }
 
-//MARK: - AuthViewDelegate
+    // MARK: - AuthViewDelegate
 
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {
@@ -44,18 +51,19 @@ extension AuthViewController: AuthViewDelegate {
                 DispatchQueue.main.async {
                     HUD.hide()
                 }
-                guard let self, token != nil else {
-                    DispatchQueue.main.async {
-                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
-                    }
-                    return
-                }
-                self.onOpenLogin?()
+//                guard let self, token != nil else {
+//                    DispatchQueue.main.async {
+//                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
+//                    }
+//                    return
+//                }
+                self?.onOpenLogin?()
             }
         }
 
     func registrationButtonDidTap() {
         onOpenRegistration?()
+
     }
 
 }

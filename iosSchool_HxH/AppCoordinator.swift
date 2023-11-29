@@ -17,7 +17,11 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow?) {
         self.window = window
         let coordinator = assembly.splashCoordinator { [weak self] in
+
+            self?.charactersBootstrap()
+
             self?.authBootstrap()
+
         }
         setRoot(viewController: coordinator.make())
     }
@@ -31,27 +35,33 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         setRoot(viewController: authCoordinator.make())
     }
 
+
     private func setTabVC() {
     //    let tabVC = assembly.rootTabBarController()
+
+    private func locationsBootstrap() {
+        setRoot(viewController: assembly.locationsCoordinator().make())
     }
-/*
+
+    private func charactersBootstrap() {
+        setRoot(viewController: assembly.charactersCoordinator().make())
+
+    }
+
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
-
         let locationsCoord = assembly.locationsCoordinator()
-        //let cabinetCoord = assembly.cabinetCoodrinator()
-        guard let locationsVC = locationsCoord.make(), let cabinetVC = cabinetCoord.make() else {
+        guard let locationsVC = locationsCoord.make() else {
             return
         }
         let navVC = assembly.rootNavigationController()
         navVC.setViewControllers([locationsVC], animated: false)
         navVC.tabBarItem = RootTab.locations.tabBarItem
 
-        cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
-        tabVC.setViewControllers([navVC, cabinetVC], animated: false)
+        tabVC.setViewControllers([navVC], animated: false)
         setRoot(viewController: tabVC)
     }
-*/
+
     private func setRoot(viewController: UIViewController?) {
         guard let window, let viewController else {
             return
