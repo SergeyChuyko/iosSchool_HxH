@@ -44,7 +44,7 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         }
 }
 
-//MARK: - AuthViewDelegate
+// MARK: - AuthViewDelegate
 
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {

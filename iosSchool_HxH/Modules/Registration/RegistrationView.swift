@@ -14,6 +14,7 @@ protocol RegistrationView: UIView {
 
 class RegistrationViewImp: UIView, RegistrationView {
 
+    @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var backgroundimageView: UIImageView!
     @IBOutlet private var registrationLabel: UILabel!
@@ -22,17 +23,18 @@ class RegistrationViewImp: UIView, RegistrationView {
     @IBOutlet private var repeatPasswordTextField: UITextField!
     @IBOutlet private var enterButton: UIButton!
     @IBOutlet private var cancelButton: UIButton!
-    @IBOutlet private var mainView: UIView!
-    @IBOutlet private var scrollView: UIScrollView!
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     func setViewRegistration() {
 
         isUserInteractionEnabled = true
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidPat))
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
-        
         imageView.image = UIImage(named: "reg-image")
         backgroundimageView.image = UIImage(named: "reg-background")
+        scrollView.showsVerticalScrollIndicator = false
 
         applyTextFieldStyles(to: loginTextField, placeholderText: "Введите логин")
         applyTextFieldStyles(to: passwordTextField, placeholderText: "Введите пароль")
@@ -99,8 +101,12 @@ class RegistrationViewImp: UIView, RegistrationView {
     }
 
     @objc private func keyboardWillShow(notification: Notification) {
-        guard let userInfo = notification.userInfo else { return }
-        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
 
         let keyboardHeight = keyboardFrame.cgRectValue.height
 
@@ -108,7 +114,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
     }
 
-    @objc private func viewDidPat() {
+    @objc private func viewDidTap() {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
