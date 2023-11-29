@@ -27,6 +27,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+
     func setViewRegistration() {
 
         isUserInteractionEnabled = true

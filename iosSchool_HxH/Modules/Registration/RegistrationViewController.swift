@@ -13,8 +13,9 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     private let registrationDataProvider: RegistrationDataProvider
     var onRegistrationSuccess: (() -> Void)?
 
-    init(registrationDataProvider: RegistrationDataProvider) {
+    init(registrationDataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
         self.registrationDataProvider = registrationDataProvider
+        self.onRegistrationSuccess = onRegistrationSuccess
 
         super.init(nibName: nil, bundle: nil)
     }
