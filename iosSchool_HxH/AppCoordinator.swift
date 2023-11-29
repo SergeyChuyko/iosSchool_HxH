@@ -35,9 +35,14 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
 
+
+    private func setTabVC() {
+    //    let tabVC = assembly.rootTabBarController()
+
     private func registrationBootstrap() {
         setRoot(viewController: assembly.registrationCoordinator { print("Closure registration is Done!") }.make())
     }
+
 
 
     private func locationsBootstrap() {
@@ -46,6 +51,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     private func charactersBootstrap() {
         setRoot(viewController: assembly.charactersCoordinator().make())
+
     }
 
     private func setTabVC() {

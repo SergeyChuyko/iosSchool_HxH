@@ -9,7 +9,15 @@ import Foundation
 import UIKit
 
 protocol SplashView: UIView {
+    func setViewSplash()
 }
 
 class SplashViewImp: UIView, SplashView {
+
+    @IBOutlet var launchImageView: UIImageView!
+
+    func setViewSplash() {
+        backgroundColor = UIColor(named: "iceberg-color")
+        launchImageView.image = UIImage(named: "launch-image")
+    }
 }
