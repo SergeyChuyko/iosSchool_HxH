@@ -16,7 +16,6 @@ protocol LocationsView: UIView {
 }
 
 class LocationsViewImp: UIView, LocationsView {
-
     var selectLocation: ((LocationsCellData) -> Void)?
 
     private var viewData: LocationsViewData?

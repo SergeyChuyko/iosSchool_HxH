@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class LocationsViewController<View: LocationsView>: BaseViewController<View> {
-
     var selectLocation: ((LocationsCellData) -> Void)?
     private let locationsDataProvider: LocationsDataProvider
 
@@ -29,7 +28,6 @@ class LocationsViewController<View: LocationsView>: BaseViewController<View> {
         setupBar()
         rootView.selectLocation = selectLocation
     }
-
 
     @objc func reload() {
         print("reload")

@@ -15,7 +15,7 @@ class LocationsCoordinator: BaseCoordinator<LocationsCoordinator.Context> {
     override func make() -> UIViewController? {
         let locationVC = assembly.locationsVC()
         locationVC.selectLocation = { [weak locationVC] locationData in
-            let coordinator = self.assembly.charactersCoordinator()
+            let coordinator = self.assembly.charactersCoordinator(data: locationData)
             guard let characterVC = coordinator.make() else {
                 return
             }
