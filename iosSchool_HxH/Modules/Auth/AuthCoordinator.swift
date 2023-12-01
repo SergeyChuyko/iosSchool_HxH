@@ -16,7 +16,7 @@ class AuthCoordinator: BaseCoordinator<AuthCoordinator.Context> {
     override func make() -> UIViewController? {
         let controller = assembly.authVC(onOpenLogin: context.onOpenLogin)
         controller.onOpenRegistration = { [weak controller] in
-            let coordinator = self.assembly.registrationCoordinator { }
+            let coordinator = self.assembly.registrationCoordinator(onRegistrationSuccess: self.context.onOpenLogin)
             guard let registrationVC = coordinator.make() else {
                 return
             }

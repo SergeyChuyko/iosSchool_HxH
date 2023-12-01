@@ -41,7 +41,7 @@ enum RootTab: Int {
         case .locations:
             return UIImage(named: "locations-image")?.withRenderingMode(.alwaysOriginal)
         case .cabinet:
-            return UIImage(named: "cabinet-image")?.withRenderingMode(.alwaysOriginal) 
+            return UIImage(named: "cabinet-image")?.withRenderingMode(.alwaysOriginal)
         }
     }
 }
