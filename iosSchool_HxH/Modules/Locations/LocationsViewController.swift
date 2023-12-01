@@ -30,9 +30,8 @@ class LocationsViewController<View: LocationsView>: BaseViewController<View> {
         rootView.selectLocation = selectLocation
     }
 
-
     @objc func reload() {
-        print("reload")
+        getListOfLocation()
     }
 
     // MARK: - Private func
@@ -42,11 +41,15 @@ class LocationsViewController<View: LocationsView>: BaseViewController<View> {
             .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
             .font: UIFont.systemFont(ofSize: 18)
         ]
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .refresh,
-            target: self,
-            action: #selector(reload)
-        )
+        if let customImage = UIImage(named: "refresh-image")?.withRenderingMode(.alwaysOriginal) {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: customImage,
+                style: .plain,
+                target: self,
+                action: #selector(reload)
+            )
+        }
+
     }
 
     private func getListOfLocation() {

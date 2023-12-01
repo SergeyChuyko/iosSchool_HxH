@@ -48,6 +48,8 @@ class LocationsViewImp: UIView, LocationsView {
         tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorColor = .black
     }
 
     func update(data: LocationsViewData) {
@@ -69,6 +71,7 @@ extension LocationsViewImp: UITableViewDataSource {
         guard let viewData else { return UITableViewCell() }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) else { return UITableViewCell() }
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
+        cell.separatorInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
         return cell
     }
 
