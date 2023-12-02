@@ -52,6 +52,5 @@ extension RegistrationViewController: RegistrationViewDelegate {
 
     func dismiss() {
         dismiss(animated: true, completion: nil)
-        print("test")
     }
 }

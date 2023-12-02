@@ -27,6 +27,7 @@ class LocationCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = .clear
         transitionImageView.image = UIImage(named: "next-image")
+
         sizeSetting(to: nameLabel)
         sizeSetting(to: typeLocationLabel)
         sizeSetting(to: populationLabel)
@@ -37,12 +38,12 @@ class LocationCell: UITableViewCell {
     private func sizeSetting(to label: UILabel) {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
+        label.sizeToFit()
     }
 
     private func update(data: LocationsCellData) {
         nameLabel.text = data.name
         typeLocationLabel.text = String(data.type)
-        populationLabel.text = "Население: " + String(data.residents.count)
+        populationLabel.text = data.populationText
     }
-
 }

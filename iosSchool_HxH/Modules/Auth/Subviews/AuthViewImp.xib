@@ -44,7 +44,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="1Gl-to-Xsq" firstAttribute="top" secondItem="tnP-qQ-xli" secondAttribute="top" constant="22" id="76x-1S-Xew"/>
                                         <constraint firstAttribute="bottom" secondItem="1Gl-to-Xsq" secondAttribute="bottom" constant="22" id="MqD-ta-h7y"/>
@@ -149,7 +149,7 @@
                 <outlet property="subTitlelabel" destination="K7V-cZ-wF8" id="q2v-nG-kT4"/>
                 <outlet property="titleLabel" destination="DZh-MP-tBb" id="D4Z-1k-2kS"/>
             </connections>
-            <point key="canvasLocation" x="129" y="20"/>
+            <point key="canvasLocation" x="128.37209302325581" y="19.95708154506438"/>
         </view>
     </objects>
     <resources>

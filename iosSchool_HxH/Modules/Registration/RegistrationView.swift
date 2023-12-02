@@ -134,7 +134,6 @@ class RegistrationViewImp: UIView, RegistrationView {
     }
 
     @IBAction func enterButtonTapped(_ sender: UIButton) {
-        print("You tapped enter button")
         delegate?.registration(
             login: loginTextField.text ?? "",
             password: passwordTextField.text ?? ""
@@ -142,7 +141,6 @@ class RegistrationViewImp: UIView, RegistrationView {
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        print("You tapped cancel button")
         delegate?.dismiss()
     }
 }

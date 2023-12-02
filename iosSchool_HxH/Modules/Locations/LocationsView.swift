@@ -68,7 +68,9 @@ extension LocationsViewImp: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewData else { return UITableViewCell() }
+        guard let viewData else {
+            return UITableViewCell()
+        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) else { return UITableViewCell() }
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         cell.separatorInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
@@ -80,7 +82,9 @@ extension LocationsViewImp: UITableViewDataSource {
 extension LocationsViewImp: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let viewData else { return }
-        selectLocation!(viewData.cellsData[indexPath.row])
+        guard let viewData else {
+            return
+        }
+        selectLocation?(viewData.cellsData[indexPath.row])
     }
 }

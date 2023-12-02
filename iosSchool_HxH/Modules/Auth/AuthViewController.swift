@@ -58,12 +58,10 @@ extension AuthViewController: AuthViewDelegate {
                 return
             }
             onOpenLogin?()
-
         }
     }
 
     func registrationButtonDidTap() {
         onOpenRegistration?()
     }
-
 }
