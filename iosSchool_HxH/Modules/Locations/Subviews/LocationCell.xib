@@ -56,7 +56,6 @@
                     <constraint firstAttribute="bottom" secondItem="NMF-AC-sMs" secondAttribute="bottom" id="4YT-ny-2Rq"/>
                     <constraint firstAttribute="trailing" secondItem="KM9-S4-ckK" secondAttribute="trailing" constant="16" id="BCN-iz-Pcm"/>
                     <constraint firstItem="KM9-S4-ckK" firstAttribute="leading" secondItem="NMF-AC-sMs" secondAttribute="trailing" id="DNY-ae-xLh"/>
-                    <constraint firstItem="NMF-AC-sMs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" priority="500" id="Hhj-Vt-poy"/>
                     <constraint firstItem="NMF-AC-sMs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="NBh-ox-l5I"/>
                     <constraint firstItem="KM9-S4-ckK" firstAttribute="centerY" secondItem="NMF-AC-sMs" secondAttribute="centerY" id="rjc-cS-MiV"/>
                     <constraint firstItem="NMF-AC-sMs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vPt-iX-xrQ"/>
