@@ -88,12 +88,7 @@ class AuthViewImp: UIView, AuthView {
     private func applyTextFieldStyles(to textField: UITextField, placeholderText: String) {
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(
-                red: 0.318,
-                green: 0.306,
-                blue: 0.306,
-                alpha: 1
-            )]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textField-color") ?? UIColor.gray]
         )
         textField.placeholder = placeholderText
         textField.layer.cornerRadius = 15
@@ -103,7 +98,7 @@ class AuthViewImp: UIView, AuthView {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
         textField.leftViewMode = .always
-        textField.backgroundColor = UIColor(red: 0.897, green: 0.897, blue: 0.897, alpha: 1)
+        textField.backgroundColor = UIColor(named: "textFieldBackground-color")
     }
 
     private func applyShadows(to view: UIView) {
