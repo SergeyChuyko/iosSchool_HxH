@@ -14,15 +14,11 @@ struct LocationsCellData {
 
     let populationText: String
 
-
-
     init(location: Location) {
         name = location.name
         type = location.type
         residents = location.residents
 
         populationText = "Население: " + String(residents.count)
-
-
     }
 }

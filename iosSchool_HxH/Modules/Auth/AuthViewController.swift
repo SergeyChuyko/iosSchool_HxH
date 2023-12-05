@@ -17,14 +17,16 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     private let dataProvider: AuthDataProvider
     private let storageManager: StorageManager
 
+    init(
+        dataProvider: AuthDataProvider,
+        storageManager: StorageManager,
+        onOpenLogin: (() -> Void)?) {
+            self.dataProvider = dataProvider
+            self.onOpenLogin = onOpenLogin
+            self.storageManager = storageManager
 
-    init(dataProvider: AuthDataProvider, storageManager: StorageManager, onOpenLogin: (() -> Void)?) {
-        self.dataProvider = dataProvider
-        self.onOpenLogin = onOpenLogin
-        self.storageManager = storageManager
-        
-        super.init(nibName: nil, bundle: nil)
-    }
+            super.init(nibName: nil, bundle: nil)
+        }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -36,11 +38,7 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         rootView.setView()
         rootView.delegate = self
 
-
-
         someLogin()
-
-
     }
 
     func someLogin() {
@@ -52,11 +50,7 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     }
 }
 
-
-// MARK: - AuthViewDelegate
-
     // MARK: - AuthViewDelegate
-
 
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {
@@ -65,24 +59,14 @@ extension AuthViewController: AuthViewDelegate {
             DispatchQueue.main.async {
                 HUD.hide()
             }
-            guard let self, token != nil else {
+            guard let self, let token else {
                 DispatchQueue.main.async {
                     SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
                 }
-
                 return
-
-                guard let self, let token else {
-                    DispatchQueue.main.async {
-                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
-                    }
-                    return
-                }
-                self.storageManager.saveToken(token: token)
-                self.onOpenLogin?()
-
             }
-            onOpenLogin?()
+            self.storageManager.saveToken(token: token)
+            self.onOpenLogin?()
         }
     }
 

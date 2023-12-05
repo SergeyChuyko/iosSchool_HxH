@@ -16,13 +16,16 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     private let storageManager: StorageManager
     var onRegistrationSuccess: (() -> Void)?
 
-    init(registrationDataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
-        self.registrationDataProvider = registrationDataProvider
-        self.onRegistrationSuccess = onRegistrationSuccess
-        self.storageManager = storageManager
+    init(
+        registrationDataProvider: RegistrationDataProvider,
+        storageManager: StorageManager,
+        onRegistrationSuccess: (() -> Void)?) {
+            self.registrationDataProvider = registrationDataProvider
+            self.onRegistrationSuccess = onRegistrationSuccess
+            self.storageManager = storageManager
 
-        super.init(nibName: nil, bundle: nil)
-    }
+            super.init(nibName: nil, bundle: nil)
+        }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -42,12 +45,13 @@ extension RegistrationViewController: RegistrationViewDelegate {
             DispatchQueue.main.async {
                 HUD.hide()
             }
-                guard let self, token != nil else {
-                    DispatchQueue.main.async {
-                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
-                    }
-                    return
+            guard let self, let token  else {
+                DispatchQueue.main.async {
+                    SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
                 }
+                return
+            }
+            self.storageManager.saveToken(token: token)
             onRegistrationSuccess?()
         }
     }

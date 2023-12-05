@@ -16,7 +16,6 @@ class CharactersViewController: UIViewController {
     private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
     private let imageSerivce: ImageService
 
-
     init(charactersDataProvider: CharactersDataProvider, data: LocationsCellData, imageSerivce: ImageService) {
         self.charactersDataProvider = charactersDataProvider
         charactersUrlList = data.residents
@@ -37,7 +36,7 @@ class CharactersViewController: UIViewController {
         charactersUrlList.forEach { url in
             requestCharacher(url: url) { [weak self] character in
                 print(character.name)
-                self?.imageSerivce.getImage(url: character.image, completion: { [weak self] image in
+                self?.imageSerivce.getImage(url: character.image, completion: { image in
                     print(image?.size ?? 0)
                 })
             }
