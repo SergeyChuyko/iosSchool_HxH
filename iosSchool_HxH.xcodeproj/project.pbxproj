@@ -38,16 +38,17 @@
 		3513C7CE2B0642E80044D80B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7CD2B0642E80044D80B /* AuthViewImp.xib */; };
 		3513C7D32B0A0E5C0044D80B /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513C7D22B0A0E5C0044D80B /* RegistrationViewImp.xib */; };
 		3513C7D62B0B2D870044D80B /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513C7D52B0B2D870044D80B /* RegistrationApiClient.swift */; };
-
 		352604402B14D1EF00EDD6ED /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526043E2B14D1EF00EDD6ED /* LocationCell.swift */; };
 		352604412B14D1EF00EDD6ED /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3526043F2B14D1EF00EDD6ED /* LocationCell.xib */; };
 		352604432B14D4DB00EDD6ED /* LocationsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352604422B14D4DB00EDD6ED /* LocationsCellData.swift */; };
 		352604462B14D7AD00EDD6ED /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352604452B14D7AD00EDD6ED /* NSObject+ClassName.swift */; };
-
+		35265A0D2B1E018E001FDECB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 35265A0C2B1E018E001FDECB /* KeychainAccess */; };
+		35265A0F2B1E019E001FDECB /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35265A0E2B1E019E001FDECB /* StorageManager.swift */; };
 		359CCE452AE119D20079EEA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE442AE119D20079EEA1 /* AppDelegate.swift */; };
 		359CCE472AE119D20079EEA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CCE462AE119D20079EEA1 /* SceneDelegate.swift */; };
 		359CCE4E2AE119D30079EEA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4D2AE119D30079EEA1 /* Assets.xcassets */; };
 		359CCE512AE119D30079EEA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */; };
+		35B136932B18CC7700A97E10 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B136922B18CC7700A97E10 /* ImageService.swift */; };
 		35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E582AE69BD700E10B2A /* ColorGenerator.swift */; };
 		35D05E5F2AEAA5CE00E10B2A /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */; };
 		35D5E4CC2B0F884000E44F0A /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4CB2B0F884000E44F0A /* TapBarController.swift */; };
@@ -55,9 +56,7 @@
 		35D5E4D12B0F894900E44F0A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */; };
 		35D5E4D42B0F925D00E44F0A /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 35D5E4D32B0F925D00E44F0A /* SPIndicator */; };
 		35D5E4D72B0F957F00E44F0A /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 35D5E4D62B0F957F00E44F0A /* PKHUD */; };
-
 		35D5E4DA2B0FC0D800E44F0A /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */; };
-
 		35E1C4722B0CC1B900A66EE5 /* LocationsApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C4712B0CC1B900A66EE5 /* LocationsApiClient.swift */; };
 		35E1C4752B0CC37300A66EE5 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C4742B0CC37300A66EE5 /* LocationsViewController.swift */; };
 		35E1C4772B0CC37A00A66EE5 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C4762B0CC37A00A66EE5 /* LocationsView.swift */; };
@@ -73,7 +72,6 @@
 		35E1C48C2B0CC98E00A66EE5 /* CharactersDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C48B2B0CC98E00A66EE5 /* CharactersDataProvider.swift */; };
 		35E1C48E2B0CC99400A66EE5 /* CharactersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C48D2B0CC99400A66EE5 /* CharactersAssembly.swift */; };
 		35E1C4902B0CC99B00A66EE5 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E1C48F2B0CC99B00A66EE5 /* CharactersCoordinator.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,20 +110,20 @@
 		3526043F2B14D1EF00EDD6ED /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		352604422B14D4DB00EDD6ED /* LocationsCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsCellData.swift; sourceTree = "<group>"; };
 		352604452B14D7AD00EDD6ED /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		35265A0E2B1E019E001FDECB /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		359CCE412AE119D20079EEA1 /* iosSchool_HxH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool_HxH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359CCE442AE119D20079EEA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		359CCE462AE119D20079EEA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		359CCE4D2AE119D30079EEA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		359CCE502AE119D30079EEA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		359CCE522AE119D30079EEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35B136922B18CC7700A97E10 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		35D05E582AE69BD700E10B2A /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		35D5E4CB2B0F884000E44F0A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		35D5E4CE2B0F88A300E44F0A /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
 		35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-
 		35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
-
 		35E1C4712B0CC1B900A66EE5 /* LocationsApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsApiClient.swift; sourceTree = "<group>"; };
 		35E1C4742B0CC37300A66EE5 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		35E1C4762B0CC37A00A66EE5 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		35E1C48B2B0CC98E00A66EE5 /* CharactersDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDataProvider.swift; sourceTree = "<group>"; };
 		35E1C48D2B0CC99400A66EE5 /* CharactersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAssembly.swift; sourceTree = "<group>"; };
 		35E1C48F2B0CC99B00A66EE5 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +148,7 @@
 			files = (
 				35D5E4D42B0F925D00E44F0A /* SPIndicator in Frameworks */,
 				35D5E4D72B0F957F00E44F0A /* PKHUD in Frameworks */,
+				35265A0D2B1E018E001FDECB /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +298,7 @@
 		359CCE432AE119D20079EEA1 /* iosSchool_HxH */ = {
 			isa = PBXGroup;
 			children = (
+				35B136912B18CC5100A97E10 /* Services */,
 				352604442B14D79900EDD6ED /* Extensions */,
 				35D5E4CD2B0F889200E44F0A /* UIKit */,
 				3513C7C92B06406B0044D80B /* Common */,
@@ -318,12 +317,29 @@
 			path = iosSchool_HxH;
 			sourceTree = "<group>";
 		};
+		35B136912B18CC5100A97E10 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35B136922B18CC7700A97E10 /* ImageService.swift */,
+				35265A0E2B1E019E001FDECB /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		35D5E4CD2B0F889200E44F0A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				35D5E4CE2B0F88A300E44F0A /* RootTab.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		35D5E4D82B0FC07300E44F0A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		35E1C4732B0CC32700A66EE5 /* Locations */ = {
@@ -353,14 +369,6 @@
 			path = Characters;
 			sourceTree = "<group>";
 		};
-		35D5E4D82B0FC07300E44F0A /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */,
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,6 +389,7 @@
 			packageProductDependencies = (
 				35D5E4D32B0F925D00E44F0A /* SPIndicator */,
 				35D5E4D62B0F957F00E44F0A /* PKHUD */,
+				35265A0C2B1E018E001FDECB /* KeychainAccess */,
 			);
 			productName = iosSchool_HxH;
 			productReference = 359CCE412AE119D20079EEA1 /* iosSchool_HxH.app */;
@@ -413,6 +422,7 @@
 			packageReferences = (
 				35D5E4D22B0F925D00E44F0A /* XCRemoteSwiftPackageReference "SPIndicator" */,
 				35D5E4D52B0F957F00E44F0A /* XCRemoteSwiftPackageReference "PKHUD" */,
+				35265A0B2B1E018E001FDECB /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 359CCE422AE119D20079EEA1 /* Products */;
 			projectDirPath = "";
@@ -475,6 +485,7 @@
 				3513C7B62B0260110044D80B /* AuthApiClient.swift in Sources */,
 				3513C7A82B0251470044D80B /* Location.swift in Sources */,
 				35E1C47B2B0CC38A00A66EE5 /* LocationsDataProvider.swift in Sources */,
+				35B136932B18CC7700A97E10 /* ImageService.swift in Sources */,
 				35E1C4862B0CC97D00A66EE5 /* CharactersViewController.swift in Sources */,
 				35E1C4792B0CC38200A66EE5 /* LocationsViewData.swift in Sources */,
 				35E1C4752B0CC37300A66EE5 /* LocationsViewController.swift in Sources */,
@@ -497,6 +508,7 @@
 				3513C77A2AF9184E0044D80B /* BaseCoordinator.swift in Sources */,
 				3513C7B42B025CB00044D80B /* ApiError.swift in Sources */,
 				3513C7B02B025AF00044D80B /* ApiClient.swift in Sources */,
+				35265A0F2B1E019E001FDECB /* StorageManager.swift in Sources */,
 				3513C7842AF9242F0044D80B /* AuthViewData.swift in Sources */,
 				3513C7822AF9230B0044D80B /* AuthView.swift in Sources */,
 				3513C7862AF924570044D80B /* AuthDataProvider.swift in Sources */,
@@ -730,6 +742,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		35265A0B2B1E018E001FDECB /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		35D5E4D22B0F925D00E44F0A /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
@@ -749,6 +769,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		35265A0C2B1E018E001FDECB /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35265A0B2B1E018E001FDECB /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		35D5E4D32B0F925D00E44F0A /* SPIndicator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 35D5E4D22B0F925D00E44F0A /* XCRemoteSwiftPackageReference "SPIndicator" */;

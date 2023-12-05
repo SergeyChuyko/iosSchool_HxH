@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class LocationsViewController<View: LocationsView>: BaseViewController<View> {
-
     var selectLocation: ((LocationsCellData) -> Void)?
     private let locationsDataProvider: LocationsDataProvider
 

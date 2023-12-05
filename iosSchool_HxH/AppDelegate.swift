@@ -12,10 +12,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var assembly = Assembly()
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        return true
-    }
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            assembly.storageManager.cleanKeychainIfNeeded()
+            return true
+        }
 
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,
