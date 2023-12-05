@@ -36,7 +36,10 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         rootView.setView()
         rootView.delegate = self
 
+
+
         someLogin()
+
 
     }
 
@@ -46,18 +49,29 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
             print(error?.rawValue ?? "no error")
         }
 
-        }
+    }
 }
+
+
+// MARK: - AuthViewDelegate
 
     // MARK: - AuthViewDelegate
 
+
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {
-            HUD.show(.progress)
-            dataProvider.auth(login: login, password: password) { [weak self] token, error in
+        HUD.show(.progress)
+        dataProvider.auth(login: login, password: password) { [weak self] token, error in
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
+            guard let self, token != nil else {
                 DispatchQueue.main.async {
-                    HUD.hide()
+                    SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
                 }
+
+                return
+
                 guard let self, let token else {
                     DispatchQueue.main.async {
                         SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
@@ -66,12 +80,13 @@ extension AuthViewController: AuthViewDelegate {
                 }
                 self.storageManager.saveToken(token: token)
                 self.onOpenLogin?()
+
             }
+            onOpenLogin?()
         }
+    }
 
     func registrationButtonDidTap() {
         onOpenRegistration?()
-
     }
-
 }

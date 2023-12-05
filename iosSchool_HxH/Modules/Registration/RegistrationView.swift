@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 
 protocol RegistrationView: UIView {
+    var delegate: RegistrationViewDelegate? { get set }
     func setViewRegistration()
+}
+
+protocol RegistrationViewDelegate: AnyObject {
+    func registration(login: String, password: String)
+    func dismiss()
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
@@ -23,6 +29,8 @@ class RegistrationViewImp: UIView, RegistrationView {
     @IBOutlet private var repeatPasswordTextField: UITextField!
     @IBOutlet private var enterButton: UIButton!
     @IBOutlet private var cancelButton: UIButton!
+
+    weak var delegate: RegistrationViewDelegate?
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -126,10 +134,13 @@ class RegistrationViewImp: UIView, RegistrationView {
     }
 
     @IBAction func enterButtonTapped(_ sender: UIButton) {
-        print("You tapped enter button")
+        delegate?.registration(
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        print("You tapped cancel button")
+        delegate?.dismiss()
     }
 }

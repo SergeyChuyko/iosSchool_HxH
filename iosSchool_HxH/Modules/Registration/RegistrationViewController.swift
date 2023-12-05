@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import PKHUD
+import SPIndicator
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
@@ -28,7 +30,29 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         rootView.setViewRegistration()
+        rootView.delegate = self
+    }
+}
+
+extension RegistrationViewController: RegistrationViewDelegate {
+    func registration(login: String, password: String) {
+        HUD.show(.progress)
+        registrationDataProvider.registration(username: login, password: password) { [weak self] token, error in
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
+                guard let self, token != nil else {
+                    DispatchQueue.main.async {
+                        SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
+                    }
+                    return
+                }
+            onRegistrationSuccess?()
+        }
+    }
+
+    func dismiss() {
+        dismiss(animated: true, completion: nil)
     }
 }
