@@ -37,7 +37,7 @@ class CharactersViewController: UIViewController {
             requestCharacher(url: url) { [weak self] character in
                 print(character.name)
                 self?.imageSerivce.getImage(url: character.image, completion: { image in
-                    print(image?.size ?? 0)
+                    print(image ?? 0)
                 })
             }
         }
@@ -63,8 +63,9 @@ class CharactersViewController: UIViewController {
                         self?.characters.append(character)
                         completion(character)
                     }
+                } else {
+                    print(error ?? "error")
                 }
-
             }
         }
     }

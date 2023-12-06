@@ -15,6 +15,7 @@ protocol ImageService {
 class ImageServiceImp: ImageService {
 
     private var imageDictionary: [String: UIImage] = [:]
+    private var imageLimit = 50
 
     private let apiClient: ApiClient
     private let updateQueue = DispatchQueue(label: "ImageServiceQueue")
@@ -24,5 +25,30 @@ class ImageServiceImp: ImageService {
     }
 
     func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
+        if let cachedImage = imageDictionary[url] {
+            completion(cachedImage)
+            return
+        }
+        DispatchQueue.global().async {
+            guard let imageUrl = URL(string: url),
+                  let imageData = try? Data(contentsOf: imageUrl),
+                  let downloadedImage = UIImage(data: imageData) else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
+            self.imageDictionary[url] = downloadedImage
+
+            if self.imageDictionary.count > self.imageLimit {
+                let keysToRemove = Array(self.imageDictionary.keys.prefix(self.imageLimit))
+                for key in keysToRemove {
+                    self.imageDictionary.removeValue(forKey: key)
+                }
+            }
+            DispatchQueue.main.async {
+                completion(downloadedImage)
+            }
+        }
     }
 }
