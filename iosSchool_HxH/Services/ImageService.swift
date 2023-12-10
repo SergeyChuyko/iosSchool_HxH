@@ -24,10 +24,13 @@ class ImageServiceImp: ImageService {
     }
 
     func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
+        if imageDictionary.count > 50 {
+            imageDictionary.removeAll()
+        }
         DispatchQueue.global().async { [weak self] in
             self?.apiClient.requestImageData(url: url) { imageData in
                 guard let imageData,
-                      let downloadedImage = UIImage(data: imageData) else {
+                let downloadedImage = UIImage(data: imageData) else {
                     self?.updateQueue.async {
                         completion(nil)
                     }
@@ -35,9 +38,6 @@ class ImageServiceImp: ImageService {
                 }
                 self?.updateQueue.async {
                     self?.imageDictionary[url] = downloadedImage
-                    if self?.imageDictionary.count ?? 0 > 50 {
-                        self?.imageDictionary.removeAll()
-                    }
                     completion(downloadedImage)
                 }
             }
