@@ -31,7 +31,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
         let authCoordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
-                self?.assembly.storageManager.saveLastEntryDate()
                 self?.setTabVC()
             }
         }
@@ -39,12 +38,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func setTabVC() {
-        guard let lastEntryDate = assembly.storageManager.lastEntryDate() else {
-            print("Вы еще не входили в приложение")
-            return
-        }
-        print("Дата последнего входа: \(lastEntryDate)")
-
         let tabVC = assembly.rootTabBarController()
         let locationsCoord = assembly.locationsCoordinator()
 //        let cabinetCoord = assembly.cabinetCoodrinator()
