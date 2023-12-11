@@ -37,6 +37,10 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
         charactersUrlList.enumerated().forEach { index, url in
             requestCharacher(url: url) { [weak self] character in
                 print(character.name)
+
+                self?.imageSerivce.getImage(url: character.image, completion: { image in
+                    print(image ?? 0)
+
                 guard let self else {
                     return
                 }
@@ -50,6 +54,7 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                 }
                 self.imageSerivce.getImage(url: character.image, completion: { image in
                     print(image?.size ?? 0)
+
                 })
             }
         }
@@ -75,8 +80,9 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                         self?.characters.append(character)
                         completion(character)
                     }
+                } else {
+                    print(error ?? "error")
                 }
-
             }
         }
     }
