@@ -32,6 +32,10 @@ class CharactersViewImp: UIView, CharactersView {
         collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        collectionView.contentInset = UIEdgeInsets(top: CGFloat(59), left: 0, bottom: 0, right: 0)
+        collectionView.showsVerticalScrollIndicator = false
+
+
     }
 
     func update(date: CharactersViewData) {
@@ -94,3 +98,4 @@ extension CharactersViewImp: UICollectionViewDelegate {
 private extension CharactersViewImp {
     typealias CharactersSection = Section<CharactersCell, EmptyReusableView, EmptyReusableView>
 }
+

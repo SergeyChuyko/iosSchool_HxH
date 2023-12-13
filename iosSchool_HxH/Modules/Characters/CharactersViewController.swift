@@ -1,10 +1,3 @@
-//
-//  CharactersViewController.swift
-//  iosSchool_HxH
-//
-//  Created by Sergo on 21.11.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -31,7 +24,7 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCharacter(id: 5)
-       // view.backgroundColor = .red
+        view.backgroundColor = UIColor(named: "background-color")
         rootView.setView()
         rootView.update(date: CharactersViewData(cells: charactersUrlList.map { CharactersCellData(url: $0) }))
         charactersUrlList.enumerated().forEach { index, url in
@@ -41,24 +34,25 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                 self?.imageSerivce.getImage(url: character.image, completion: { image in
                     print(image ?? 0)
 
-                guard let self else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
-                        character: character,
-                        isLoading: true,
-                        image: nil,
-                        selectClosure: nil
-                    ))
-                }
-                self.imageSerivce.getImage(url: character.image, completion: { image in
-                    print(image?.size ?? 0)
+                    guard let self = self else {
+                        return
+                    }
 
+                    DispatchQueue.main.async {
+                        self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
+                            character: character,
+                            isLoading: true,
+                            image: image,
+                            selectClosure: nil
+                        ))
+                    }
+
+                    self.imageSerivce.getImage(url: character.image, completion: { image in
+                        print(image?.size ?? 0)
+                    })
                 })
             }
         }
-
     }
 
     func getCharacter(id: Int) {
@@ -75,7 +69,7 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
         }
         DispatchQueue.global().async {
             self.charactersDataProvider.character(url: url) { [weak self] character, error in
-                if let character {
+                if let character = character {
                     self?.updateQueue.async {
                         self?.characters.append(character)
                         completion(character)

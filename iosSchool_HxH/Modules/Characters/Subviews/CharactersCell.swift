@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import PKHUD
 
 class CharactersCell: UICollectionViewCell, CoreCellView {
-    @IBOutlet private weak var nameLabel: UILabel!
 
+    @IBOutlet private weak var imageView: UIImageView!
+
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var typeLabel: UILabel!
     static func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
@@ -34,6 +39,40 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
     }
 
     func update(with inputData: CharactersCellData) {
-        nameLabel.text = inputData.name
+        cellSettings()
+        if inputData.image == nil && inputData.name == nil && inputData.type == nil {
+            startLoading()
+        } else {
+            imageView.image = inputData.image
+            nameLabel.text = inputData.name
+            typeLabel.text = inputData.type
+            stopLoading()
+        }
+    }
+    func startLoading() {
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.isHidden = false
+    }
+
+    func stopLoading() {
+        activityIndicatorView.stopAnimating()
+        activityIndicatorView.isHidden = true
+    }
+    private func cellSettings() {
+        layer.cornerRadius = 15
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 8
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+
+        sizeSetting(to: nameLabel)
+        sizeSetting(to: typeLabel)
+    }
+
+    private func sizeSetting(to label: UILabel) {
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.sizeToFit()
     }
 }
