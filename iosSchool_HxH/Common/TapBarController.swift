@@ -23,9 +23,5 @@ class TabBarController: UITabBarController {
 
         tabBar.backgroundColor = UIColor(named: "iceberg-color")
         tabBar.isTranslucent = false
-        tabBar.barTintColor = .red
-
-
-
     }
 }
