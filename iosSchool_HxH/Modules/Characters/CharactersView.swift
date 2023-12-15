@@ -9,14 +9,18 @@ import Foundation
 import UIKit
 
 protocol CharactersView: UIView {
+    var selectCharacter: ((CharactersCellData) -> Void)? { get set }
+
     func setView()
     func update(date: CharactersViewData)
     func updateCharacter(index: Int, with data: CharactersCellData)
 }
 
 class CharactersViewImp: UIView, CharactersView {
+    var selectCharacter: ((CharactersCellData) -> Void)?
 
     private var section: CoreSection?
+    private var viewData: CharactersViewData?
 
     lazy var collectionView: UICollectionView = {
         UICollectionView(frame: .zero, collectionViewLayout: layout())
