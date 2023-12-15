@@ -36,12 +36,10 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
 
         setupBackButton()
 
-
         rootView.setView()
         rootView.update(date: CharactersViewData(cells: charactersUrlList.map { CharactersCellData(url: $0) }))
         charactersUrlList.enumerated().forEach { index, url in
             requestCharacher(url: url) { [weak self] character in
-
                 guard let self = self else {
                     return
                 }
@@ -65,28 +63,28 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                         ))
                     }
 
-                print(character.name)
+                    print(character.name)
 
-                self?.imageSerivce.getImage(url: character.image, completion: { image in
-                    print(image ?? 0)
+                    self?.imageSerivce.getImage(url: character.image, completion: { image in
+                        print(image ?? 0)
 
-                    guard let self = self else {
-                        return
-                    }
+                        guard let self = self else {
+                            return
+                        }
 
-                    DispatchQueue.main.async {
-                        self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
-                            character: character,
-                            isLoading: true,
-                            image: image,
-                            selectClosure: selectClosure
-                        ))
-                    }
+                        DispatchQueue.main.async {
+                            self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
+                                character: character,
+                                isLoading: true,
+                                image: image,
+                                selectClosure: selectClosure
+                            ))
+                        }
 
-                    self.imageSerivce.getImage(url: character.image, completion: { image in
-                        print(image?.size ?? 0)
+                        self.imageSerivce.getImage(url: character.image, completion: { image in
+                            print(image?.size ?? 0)
+                        })
                     })
-
                 })
             }
         }
@@ -131,5 +129,4 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-
 }
