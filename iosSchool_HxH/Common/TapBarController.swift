@@ -22,7 +22,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         tabBar.backgroundColor = UIColor(named: "iceberg-color")
-
         tabBar.isTranslucent = false
     }
 }

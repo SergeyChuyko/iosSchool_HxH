@@ -18,6 +18,7 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
         navigationBar.isTranslucent = false
         navigationBar.backgroundColor = UIColor(named: "iceberg-color")
         view.backgroundColor = UIColor(named: "iceberg-color")
+        navigationBar.barTintColor = UIColor(named: "iceberg-color")
     }
 
     override var childForStatusBarStyle: UIViewController? {
