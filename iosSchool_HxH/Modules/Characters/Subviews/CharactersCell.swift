@@ -44,15 +44,13 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
     }
 
     func update(with inputData: CharactersCellData) {
+        imageView.image = inputData.image
+        nameLabel.text = inputData.name
+        typeLabel.text = inputData.type
         if inputData.isLoading {
             startLoading()
-            nameLabel.text = inputData.name
-            typeLabel.text = inputData.type
         } else {
             stopLoading()
-            imageView.image = inputData.image
-            nameLabel.text = inputData.name
-            typeLabel.text = inputData.type
         }
     }
 
