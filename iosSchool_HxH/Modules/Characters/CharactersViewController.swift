@@ -49,7 +49,7 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                         character: character,
                         isLoading: true,
                         image: nil,
-                        selectClosure: nil
+                        selectClosure: selectClosure
                     ))
                 }
 
@@ -59,32 +59,9 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                             character: character,
                             isLoading: false,
                             image: image,
-                            selectClosure: nil
+                            selectClosure: selectClosure
                         ))
                     }
-
-                    print(character.name)
-
-                    self?.imageSerivce.getImage(url: character.image, completion: { image in
-                        print(image ?? 0)
-
-                        guard let self = self else {
-                            return
-                        }
-
-                        DispatchQueue.main.async {
-                            self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
-                                character: character,
-                                isLoading: true,
-                                image: image,
-                                selectClosure: selectClosure
-                            ))
-                        }
-
-                        self.imageSerivce.getImage(url: character.image, completion: { image in
-                            print(image?.size ?? 0)
-                        })
-                    })
                 })
             }
         }
