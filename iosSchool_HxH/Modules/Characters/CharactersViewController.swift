@@ -25,31 +25,33 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
         super.viewDidLoad()
         getCharacter(id: 5)
         view.backgroundColor = UIColor(named: "background-color")
+        setupBackButton()
         rootView.setView()
         rootView.update(date: CharactersViewData(cells: charactersUrlList.map { CharactersCellData(url: $0) }))
         charactersUrlList.enumerated().forEach { index, url in
             requestCharacher(url: url) { [weak self] character in
-                print(character.name)
+                guard let self = self else {
+                    return
+                }
 
-                self?.imageSerivce.getImage(url: character.image, completion: { image in
-                    print(image ?? 0)
+                DispatchQueue.main.async {
+                    self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
+                        character: character,
+                        isLoading: true,
+                        image: nil,
+                        selectClosure: nil
+                    ))
+                }
 
-                    guard let self = self else {
-                        return
-                    }
-
+                self.imageSerivce.getImage(url: character.image, completion: { [weak self] image in
                     DispatchQueue.main.async {
-                        self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
+                        self?.rootView.updateCharacter(index: index, with: CharactersCellData.init(
                             character: character,
-                            isLoading: true,
+                            isLoading: false,
                             image: image,
                             selectClosure: nil
                         ))
                     }
-
-                    self.imageSerivce.getImage(url: character.image, completion: { image in
-                        print(image?.size ?? 0)
-                    })
                 })
             }
         }
@@ -80,4 +82,19 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
             }
         }
     }
+
+    private func setupBackButton() {
+        let backButton = UIBarButtonItem(
+            image: UIImage(named: "backButtonPlaceholder-image")?.withRenderingMode(.alwaysOriginal),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped)
+        )
+        navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+
 }

@@ -38,26 +38,34 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
         return section
     }
 
-    func update(with inputData: CharactersCellData) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
         cellSettings()
-        if inputData.image == nil && inputData.name == nil && inputData.type == nil {
+    }
+
+    func update(with inputData: CharactersCellData) {
+        if inputData.isLoading {
             startLoading()
+            nameLabel.text = inputData.name
+            typeLabel.text = inputData.type
         } else {
+            stopLoading()
             imageView.image = inputData.image
             nameLabel.text = inputData.name
             typeLabel.text = inputData.type
-            stopLoading()
         }
     }
-    func startLoading() {
+
+    private func startLoading() {
         activityIndicatorView.startAnimating()
         activityIndicatorView.isHidden = false
     }
 
-    func stopLoading() {
+    private func stopLoading() {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.isHidden = true
     }
+
     private func cellSettings() {
         layer.cornerRadius = 15
         layer.masksToBounds = false
@@ -68,11 +76,12 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
 
         sizeSetting(to: nameLabel)
         sizeSetting(to: typeLabel)
+        imageView.image = UIImage(named: "placeholder-image")
     }
 
     private func sizeSetting(to label: UILabel) {
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.minimumScaleFactor = 0.1
         label.sizeToFit()
     }
 }
