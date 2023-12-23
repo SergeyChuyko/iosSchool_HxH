@@ -1,31 +1,33 @@
 //
-//  PersonAvatarCell.swift
-//  iosSchoolHH
+//  CabinetLoginCell.swift
+//  iosSchool_HxH
 //
-//  Created by Арина Колганова on 14.12.2023.
+//  Created by Sergo on 22.12.2023.
 //
 
 import UIKit
 
-class PersonAvatarCell: UICollectionViewCell, CoreCellView {
+class CabinetLoginCell: UICollectionViewCell, CoreCellView {
+
+    @IBOutlet private weak var loginLabel: UILabel!
 
     static func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.5)
+            heightDimension: .absolute(27)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.5)
+            heightDimension: .absolute(27)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5 )
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
         return section
     }
 
-    func update(with inputData: PersonAvatarCellData) {
+    func update(with inputData: CabinetLoginCellData) {
+        loginLabel.text = inputData.login
     }
-
 }

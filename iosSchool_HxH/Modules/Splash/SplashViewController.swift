@@ -31,7 +31,7 @@ class SplashViewController<View: SplashView>: BaseViewController<View> {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false) { [weak self] timer in
             self?.onSuccess?()
             timer.invalidate()
         }

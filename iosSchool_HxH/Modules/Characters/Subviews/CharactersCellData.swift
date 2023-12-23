@@ -20,7 +20,6 @@ struct CharactersCellData: CoreCellInputData {
 
     let episodes: [String]
 
-
     init(character: Character, isLoading: Bool, image: UIImage?, selectClosure: ((CoreCellInputData) -> Void)?) {
         url = character.url
         self.isLoading = isLoading
@@ -41,10 +40,7 @@ struct CharactersCellData: CoreCellInputData {
         name = nil
         imageUrl = nil
         image = nil
-
         type = nil
-
         episodes = []
-
     }
 }
