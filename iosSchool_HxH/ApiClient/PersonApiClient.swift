@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol EpisodeApiClient {
+protocol PersonApiClient {
     func episode(url: String, onRequestCompleted: @escaping (Episode?, ApiError?) -> Void)
 }
 
-extension ApiClient: EpisodeApiClient {
+extension ApiClient: PersonApiClient {
     func episode(url: String, onRequestCompleted: @escaping (Episode?, ApiError?) -> Void) {
         performRequest(url: url, data: nil, method: .get) { (result: Result<Episode, ApiError>) in
             switch result {

@@ -43,5 +43,4 @@ class CabinetExitCell: UICollectionViewCell, CoreCellView {
 
     func update(with inputData: CabinetExitCellData) {
     }
-
 }

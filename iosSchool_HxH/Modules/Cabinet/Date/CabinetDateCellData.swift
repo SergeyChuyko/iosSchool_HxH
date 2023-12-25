@@ -5,8 +5,9 @@
 //  Created by Sergo on 17.12.2023.
 //
 
-import Foundation
+import UIKit
 struct CabinetDateCellData: CoreCellInputData {
     var selectClosure: ((CoreCellInputData) -> Void)?
-    let date: String
+    let date: String?
+    let color: UIColor?
 }

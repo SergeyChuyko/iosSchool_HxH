@@ -2,7 +2,7 @@
 //  PersonEpisodeCell.swift
 //  iosSchoolHH
 //
-//  Created by Арина Колганова on 14.12.2023.
+//  Created by Sergo on 14.12.2023.
 //
 
 import UIKit
@@ -49,8 +49,6 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
         layer.shadowOpacity = 1
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 5)
-        sizeSetting(to: episodeNameLabel)
-        sizeSetting(to: dateLabel)
         numberViewSettings(to: numberView)
     }
 
@@ -63,11 +61,4 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
         numberView.layer.shadowRadius = 4
         numberView.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
-
-    private func sizeSetting(to label: UILabel) {
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.1
-        label.sizeToFit()
-    }
-
 }

@@ -64,7 +64,7 @@ class CabinetViewImp: UIView, CabinetView {
             case .loginSection:
                 return CabinetLoginSection(cellsData: [data.cabinetLoginData])
             case .dateSection:
-                return CabinetDateSection(cellsData: [data.cabinetDateData])
+                return CabinetDateSection(cellsData: data.cabinetDateData)
             case .exitSection:
                 return CabinetExitSection(cellsData: [data.episodeExitData])
             }
@@ -79,7 +79,6 @@ class CabinetViewImp: UIView, CabinetView {
             return layoutSection
         }
     }
-
 }
 
 // MARK: - UICollectionViewDataSource
@@ -106,12 +105,14 @@ extension CabinetViewImp: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath) -> UICollectionReusableView {
-            sections[indexPath.section].reusableView(
-                collectionView: collectionView,
-                indexPath: indexPath, kind: kind
-            ) ?? UICollectionReusableView()
-        }
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        return sections[indexPath.section].reusableView(
+            collectionView: collectionView,
+            indexPath: indexPath,
+            kind: kind
+        ) ?? UICollectionReusableView()
+    }
 }
 
 // MARK: - UICollectionViewDelegate

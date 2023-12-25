@@ -10,10 +10,10 @@ import UIKit
 
 class CabinetCoordinator: BaseCoordinator<CabinetCoordinator.Context> {
     struct Context {
-        let unLogin: (() -> Void)?
+        let logout: (() -> Void)?
     }
 
     override func make() -> UIViewController? {
-        assembly.cabinetVC(unLogin: context.unLogin)
+        assembly.cabinetVC(logout: context.logout)
     }
 }

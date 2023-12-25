@@ -9,12 +9,12 @@ import UIKit
 
 class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
-    private var unLogin: (() -> Void)?
+    private var logout: (() -> Void)?
     private let storageManager: StorageManager
     private let dateManager: DateManager
 
-    init(unLogin: (() -> Void)?, storageManager: StorageManager, dateManager: DateManager) {
-        self.unLogin = unLogin
+    init(logout: (() -> Void)?, storageManager: StorageManager, dateManager: DateManager) {
+        self.logout = logout
         self.storageManager = storageManager
         self.dateManager = dateManager
 
@@ -27,17 +27,16 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         rootView.setView()
-        view.backgroundColor = .red
-        let selectClosure: ((CoreCellInputData) -> Void)? = { [weak self] _ in
-            self?.storageManager.removeTokern()
-            self?.unLogin?()
-        }
         rootView.update(
             data: .init(
                 image: UIImage(named: "profileBackground-image") ?? UIImage(),
                 registerLogin: self.storageManager.getRegisterLogin(),
                 entryDate: self.dateManager.format(date: self.storageManager.lastEntryDate() ?? Date()),
-                unLogin: selectClosure
+                color: UIColor(named: "iceberg-color") ?? .red,
+                logout: { [weak self] _ in
+                    self?.storageManager.removeTokern()
+                    self?.logout?()
+                }
             )
         )
     }

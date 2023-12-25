@@ -8,5 +8,5 @@
 import UIKit
 struct CabinetAvatarCellData: CoreCellInputData {
     var selectClosure: ((CoreCellInputData) -> Void)?
-    let image: UIImage
+    let image: UIImage?
 }

@@ -12,9 +12,9 @@ protocol PersonDataProvider {
 }
 
 class PersonDataProviderImp: PersonDataProvider {
-    private let episodeApiClient: EpisodeApiClient
+    private let episodeApiClient: PersonApiClient
 
-    init(episodeApiClient: EpisodeApiClient) {
+    init(episodeApiClient: PersonApiClient) {
         self.episodeApiClient = episodeApiClient
     }
 

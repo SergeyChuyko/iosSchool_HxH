@@ -2,7 +2,7 @@
 //  PersonAvatarCell.swift
 //  iosSchoolHH
 //
-//  Created by Арина Колганова on 14.12.2023.
+//  Created by Sergo on 14.12.2023.
 //
 
 import UIKit
@@ -31,9 +31,12 @@ class PersonAvatarCell: UICollectionViewCell, CoreCellView {
         cellSettings()
     }
 
+    // MARK: - Functions
     func update(with inputData: PersonAvatarCellData) {
         characterImageView.image = inputData.image
     }
+
+    // MARK: - Private function
 
     private func cellSettings() {
         layer.cornerRadius = 15

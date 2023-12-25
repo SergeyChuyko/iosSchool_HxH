@@ -8,5 +8,5 @@
 import Foundation
 struct CabinetLoginCellData: CoreCellInputData {
     var selectClosure: ((CoreCellInputData) -> Void)?
-    let login: String
+    let login: String?
 }
