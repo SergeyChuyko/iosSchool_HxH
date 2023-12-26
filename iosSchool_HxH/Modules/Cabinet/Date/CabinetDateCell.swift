@@ -17,8 +17,8 @@ class CabinetDateCell: UICollectionViewCell, CoreCellView {
     override func awakeFromNib() {
         super.awakeFromNib()
         clipsToBounds = false
-        labelSettings(label: cellView)
-        labelSettings(label: profileColorView)
+        shadowsSettings(view: cellView)
+        shadowsSettings(view: profileColorView)
         profileColorView.layer.cornerRadius = 10
     }
 
@@ -41,26 +41,28 @@ class CabinetDateCell: UICollectionViewCell, CoreCellView {
     }
 
     func update(with inputData: CabinetDateCellData) {
-        guard inputData.date != nil else {
+        if inputData.date != nil {
+            profileColorView.isHidden = true
+            textLabel.text = "Дата входа"
+            dateLabel.text = inputData.date ?? ".. .. ...."
+            dateLabel.isHidden = false
+            profileColorView.backgroundColor = .clear
+        } else {
             dateLabel.isHidden = true
             textLabel.text = "Цвет профиля"
             profileColorView.backgroundColor = inputData.color ?? .clear
-            return
+            profileColorView.isHidden = false
         }
-        profileColorView.isHidden = true
-        textLabel.text = "Дата входа"
-        dateLabel.text = inputData.date ?? ".. .. ...."
-
     }
 
     // MARK: - Private methods
 
-    private func labelSettings(label: UIView) {
-        label.layer.cornerRadius = 15
-        label.layer.borderWidth = 1
-        label.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        label.layer.shadowOpacity = 1
-        label.layer.shadowRadius = 8
-        label.layer.shadowOffset = CGSize(width: 0, height: 5)
+    private func shadowsSettings(view: UIView) {
+        view.layer.cornerRadius = 15
+        view.layer.borderWidth = 1
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowRadius = 8
+        view.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 }

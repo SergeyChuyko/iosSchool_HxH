@@ -45,19 +45,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="U0A-Us-dNW" secondAttribute="trailing" id="5Hz-5e-9PM"/>
-                                    <constraint firstItem="U0A-Us-dNW" firstAttribute="top" secondItem="Hmd-CA-bhe" secondAttribute="top" id="USA-ov-Jc0"/>
-                                    <constraint firstAttribute="bottom" secondItem="hmX-Xt-r6Q" secondAttribute="bottom" id="coP-8n-nrc"/>
-                                    <constraint firstAttribute="bottom" secondItem="U0A-Us-dNW" secondAttribute="bottom" id="gfN-da-Vme"/>
-                                    <constraint firstItem="hmX-Xt-r6Q" firstAttribute="top" secondItem="Hmd-CA-bhe" secondAttribute="top" id="i0k-YH-bLT"/>
-                                    <constraint firstItem="hmX-Xt-r6Q" firstAttribute="leading" secondItem="Hmd-CA-bhe" secondAttribute="leading" id="ie5-i5-vDc"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Q4v-88-zab" secondAttribute="bottom" constant="10" id="8El-uA-S7H"/>
+                            <constraint firstItem="Hmd-CA-bhe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q4v-88-zab" secondAttribute="trailing" constant="16" id="EIg-Nd-2lH"/>
                             <constraint firstAttribute="height" constant="40" id="JNL-8b-6d0"/>
                             <constraint firstAttribute="trailing" secondItem="Hmd-CA-bhe" secondAttribute="trailing" constant="16" id="Mz8-tX-fDV"/>
                             <constraint firstItem="Hmd-CA-bhe" firstAttribute="centerY" secondItem="fma-9u-pIy" secondAttribute="centerY" id="n6s-VC-Sj9"/>

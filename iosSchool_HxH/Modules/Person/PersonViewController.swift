@@ -33,18 +33,16 @@ class PersonViewController<View: PersonView>: BaseViewController<View> {
         super.viewDidLoad()
         setupBackButton()
         rootView.setView()
-        guard let imageUrl = imageUrl, !imageUrl.isEmpty else {
-            return
-        }
-        imageService.getImage(url: imageUrl) { [weak self] image in
-            guard let self = self, let image = image else {
-                return
+        if let imageUrl = imageUrl {
+            imageService.getImage(url: imageUrl) { [weak self] image in
+                guard let self = self, let image = image else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.rootView.update(data: .init(image: image, episodeUrl: self.episodesUrlList))
+                }
             }
-            DispatchQueue.main.async {
-                self.rootView.update(data: .init(image: image, episodeUrl: self.episodesUrlList))
-            }
         }
-
         episodesUrlList.enumerated().forEach { idx, url in
             requestEpisode(url: url) { [weak self] episode in
                 guard let self else {
@@ -52,9 +50,8 @@ class PersonViewController<View: PersonView>: BaseViewController<View> {
                 }
                 DispatchQueue.main.async {
                     self.rootView.updateEpisode(
-                        idx: idx, with: PersonEpisodeCellData(
-                            episode: episode
-                        )
+                        idx: idx,
+                        with: PersonEpisodeCellData(episode: episode)
                     )
                 }
             }

@@ -57,7 +57,8 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
         tabVC.setViewControllers([navVC, cabinetVC], animated: false)
         setRoot(viewController: tabVC)
-        }
+    }
+
     private func setRoot(viewController: UIViewController?) {
         guard let window, let viewController else {
             return

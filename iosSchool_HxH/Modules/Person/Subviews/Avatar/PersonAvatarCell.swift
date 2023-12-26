@@ -37,7 +37,6 @@ class PersonAvatarCell: UICollectionViewCell, CoreCellView {
     }
 
     // MARK: - Private function
-
     private func cellSettings() {
         layer.cornerRadius = 15
         layer.masksToBounds = false
