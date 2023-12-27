@@ -46,7 +46,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         guard let locationsVC = locationsCoord.make() else {
             return
         }
-        guard let cabinetVC = cabinetCoord.make() else {
+        guard let cabinetsVC = cabinetCoord.make() else {
             return
         }
 
@@ -54,11 +54,13 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         navVC.setViewControllers([locationsVC], animated: false)
         navVC.tabBarItem = RootTab.locations.tabBarItem
 
+        let cabinetVC = assembly.rootNavigationController()
+        cabinetVC.setViewControllers([cabinetsVC], animated: true)
         cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
+
         tabVC.setViewControllers([navVC, cabinetVC], animated: false)
         setRoot(viewController: tabVC)
-    }
-
+        }
     private func setRoot(viewController: UIViewController?) {
         guard let window, let viewController else {
             return

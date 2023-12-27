@@ -15,10 +15,11 @@ protocol StorageManager {
     func removeTokern()
     func lastEntryDate() -> Date?
     func saveLastEntryDate()
+    func saveRegisterLogin(registerLogin: String)
+    func getRegisterLogin() -> String
 }
 
 class StorageManagerImp: StorageManager {
-
     private let keyChain = Keychain(service: Constants.serviceId)
 
     func cleanKeychainIfNeeded() {
@@ -69,6 +70,14 @@ class StorageManagerImp: StorageManager {
     func saveLastEntryDate() {
         UserDefaults.standard.set(Date(), forKey: StorageManagerKey.lastEntryDate.rawValue)
     }
+
+    func saveRegisterLogin(registerLogin: String) {
+        UserDefaults.standard.set(registerLogin, forKey: StorageManagerKey.registerLogin.rawValue)
+    }
+
+    func getRegisterLogin() -> String {
+        UserDefaults.standard.object(forKey: StorageManagerKey.registerLogin.rawValue) as? String ?? "Default Login"
+    }
 }
 
 private extension StorageManagerImp {
@@ -76,6 +85,7 @@ private extension StorageManagerImp {
         case token
         case notFirstLaunch
         case lastEntryDate
+        case registerLogin
     }
 
     struct Constants {

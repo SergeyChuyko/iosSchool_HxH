@@ -10,7 +10,7 @@ import UIKit
 
 enum RootTab: Int {
     case locations = 0
-    case cabinet
+    case cabinet = 1
 
     var tabBarItem: UITabBarItem {
         let tabBarItem = UITabBarItem(

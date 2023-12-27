@@ -10,13 +10,19 @@ import UIKit
 class PersonViewController<View: PersonView>: BaseViewController<View> {
 
     private let dataProvider: PersonDataProvider
-    private let episodes: [String]
+    private var episodes: [Episode] = []
+    private let episodesUrlList: [String]
+    private let imageService: ImageService
+    private let imageUrl: String?
+    private let updateQueue = DispatchQueue(label: "EpisodeRequestQueue")
 
     init(dataProvider: PersonDataProvider, data: CharactersCellData, imageService: ImageService) {
         self.dataProvider = dataProvider
-        self.episodes = data.episodes
+        self.episodesUrlList = data.episodes
+        self.imageService = imageService
+        self.imageUrl = data.imageUrl
         super.init(nibName: nil, bundle: nil)
-        title = "Жители локации"
+        title = data.name
     }
 
     required init?(coder: NSCoder) {
@@ -25,21 +31,58 @@ class PersonViewController<View: PersonView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGreen
+        setupBackButton()
         rootView.setView()
-        rootView.update(data: .init(image: nil, episodeUrl: episodes, episodeHeader: .init()))
+        if let imageUrl = imageUrl {
+            imageService.getImage(url: imageUrl) { [weak self] image in
+                guard let self = self, let image = image else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.rootView.update(data: .init(image: image, episodeUrl: self.episodesUrlList))
+                }
+            }
+        }
+        episodesUrlList.enumerated().forEach { idx, url in
+            requestEpisode(url: url) { [weak self] episode in
+                guard let self else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.rootView.updateEpisode(
+                        idx: idx,
+                        with: PersonEpisodeCellData(episode: episode)
+                    )
+                }
+            }
+        }
     }
 
-    private func setupBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "trash"),
+    private func requestEpisode(url: String, completion: @escaping (Episode) -> Void) {
+        DispatchQueue.global().async {
+            self.dataProvider.episode(url: url) { [weak self] episode, _  in
+                guard let episode = episode else {
+                    return
+                }
+                self?.updateQueue.async {
+                    self?.episodes.append(episode)
+                    completion(episode)
+                }
+            }
+        }
+    }
+
+    private func setupBackButton() {
+        let backButton = UIBarButtonItem(
+            image: UIImage(named: "backButtonPlaceholder-image")?.withRenderingMode(.alwaysOriginal),
             style: .plain,
             target: self,
-            action: #selector(back)
+            action: #selector(backButtonTapped)
         )
+        navigationItem.leftBarButtonItem = backButton
     }
 
-    @objc private func back() {
-        self.navigationController?.popViewController(animated: true)
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
 }
