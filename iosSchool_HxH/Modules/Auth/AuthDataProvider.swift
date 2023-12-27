@@ -15,7 +15,6 @@ protocol AuthDataProvider {
 }
 
 class AuthDataProviderImp: AuthDataProvider {
-
     private let apiClient: AuthApiClient
 
     init(apiClient: AuthApiClient) {
@@ -27,5 +26,5 @@ class AuthDataProviderImp: AuthDataProvider {
               onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
     ) {
         apiClient.auth(login: login, password: password, onRequestCompleted: onRequestCompleted)
-        }
     }
+}

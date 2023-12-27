@@ -71,7 +71,7 @@
     </objects>
     <resources>
         <namedColor name="iceberg-color">
-            <color red="0.7686274509803922" green="0.84705882352941175" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.76899999380111694" green="0.84700000286102295" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

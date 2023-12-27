@@ -8,7 +8,6 @@
 import UIKit
 
 class CabinetDateCell: UICollectionViewCell, CoreCellView {
-
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var profileColorView: UIView!
     @IBOutlet private weak var textLabel: UILabel!

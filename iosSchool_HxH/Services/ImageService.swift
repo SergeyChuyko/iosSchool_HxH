@@ -5,7 +5,6 @@
 //  Created by Sergo on 30.11.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol ImageService {
@@ -13,7 +12,6 @@ protocol ImageService {
 }
 
 class ImageServiceImp: ImageService {
-
     private var imageDictionary: [String: UIImage] = [:]
 
     private let apiClient: ApiClient
@@ -30,7 +28,7 @@ class ImageServiceImp: ImageService {
         DispatchQueue.global().async { [weak self] in
             self?.apiClient.requestImageData(url: url) { imageData in
                 guard let imageData,
-                let downloadedImage = UIImage(data: imageData) else {
+                      let downloadedImage = UIImage(data: imageData) else {
                     self?.updateQueue.async {
                         completion(nil)
                     }

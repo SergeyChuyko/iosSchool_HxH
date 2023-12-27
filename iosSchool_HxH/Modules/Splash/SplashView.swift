@@ -5,7 +5,6 @@
 //  Created by Sergo on 09.11.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol SplashView: UIView {
@@ -13,7 +12,6 @@ protocol SplashView: UIView {
 }
 
 class SplashViewImp: UIView, SplashView {
-
     @IBOutlet var launchImageView: UIImageView!
 
     func setViewSplash() {

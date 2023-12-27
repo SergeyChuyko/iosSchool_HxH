@@ -25,5 +25,4 @@ extension Assembly: CharactersAssembly {
     func charactersCoordinator(data: LocationsCellData) -> CharactersCoordinator {
         CharactersCoordinator(assembly: self, context: .init(data: data))
     }
-
 }

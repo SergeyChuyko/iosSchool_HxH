@@ -8,7 +8,6 @@
 import UIKit
 
 class EmptyReusableView: UICollectionReusableView, CoreReusableView {
-
     static func layouItem() -> NSCollectionLayoutBoundarySupplementaryItem? {
         nil
     }
@@ -16,5 +15,4 @@ class EmptyReusableView: UICollectionReusableView, CoreReusableView {
     func update(with _: Void) -> Self {
         self
     }
-
 }

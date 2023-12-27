@@ -9,12 +9,11 @@ import UIKit
 import PKHUD
 
 class CharactersCell: UICollectionViewCell, CoreCellView {
-
     @IBOutlet private weak var imageView: UIImageView!
-
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var typeLabel: UILabel!
+
     static func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
@@ -25,7 +24,6 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
             widthDimension: .fractionalWidth(1),
             heightDimension: .absolute(167)
         )
-
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             repeatingSubitem: item,
@@ -55,6 +53,7 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
     }
 
     private func startLoading() {
+        imageView.image = UIImage(named: "placeholder-image")
         activityIndicatorView.startAnimating()
         activityIndicatorView.isHidden = false
     }
@@ -74,7 +73,6 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
 
         sizeSetting(to: nameLabel)
         sizeSetting(to: typeLabel)
-        imageView.image = UIImage(named: "placeholder-image")
     }
 
     private func sizeSetting(to label: UILabel) {

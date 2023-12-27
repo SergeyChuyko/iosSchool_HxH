@@ -5,7 +5,6 @@
 //  Created by Sergo on 06.11.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol AuthView: UIView {
@@ -19,7 +18,6 @@ protocol AuthViewDelegate: AnyObject {
 }
 
 class AuthViewImp: UIView, AuthView {
-
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var labelView: UIView!
@@ -37,11 +35,10 @@ class AuthViewImp: UIView, AuthView {
     }
 
     func setView() {
-
         isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidPat))
         addGestureRecognizer(recognizer)
-
+        backgroundColor = UIColor(named: "background-color")
         imageView.image = UIImage(named: "auth-background")
         imageView.contentMode = .scaleAspectFill
         labelView.layer.cornerRadius = 10
@@ -79,6 +76,7 @@ class AuthViewImp: UIView, AuthView {
     }
 
     // MARK: - Private
+
     private func applyButtonSettings(to button: UIButton) {
         button.layer.cornerRadius = 10
         button.backgroundColor = UIColor(named: "button-color")
@@ -141,5 +139,4 @@ class AuthViewImp: UIView, AuthView {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-
 }

@@ -26,5 +26,4 @@ extension ApiClient: AuthApiClient {
             }
         }
     }
-
 }

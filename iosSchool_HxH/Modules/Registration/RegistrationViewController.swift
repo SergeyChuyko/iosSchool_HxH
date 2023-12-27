@@ -5,13 +5,11 @@
 //  Created by Sergo on 11.11.2023.
 //
 
-import Foundation
 import UIKit
 import PKHUD
 import SPIndicator
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
-
     private let registrationDataProvider: RegistrationDataProvider
     private let storageManager: StorageManager
     var onRegistrationSuccess: (() -> Void)?
@@ -23,7 +21,6 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
             self.registrationDataProvider = registrationDataProvider
             self.onRegistrationSuccess = onRegistrationSuccess
             self.storageManager = storageManager
-
             super.init(nibName: nil, bundle: nil)
         }
 

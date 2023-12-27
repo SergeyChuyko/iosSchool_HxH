@@ -5,7 +5,6 @@
 //  Created by Sergo on 21.11.2023.
 //
 
-import Foundation
 import UIKit
 
 class LocationsCoordinator: BaseCoordinator<LocationsCoordinator.Context> {
@@ -14,15 +13,6 @@ class LocationsCoordinator: BaseCoordinator<LocationsCoordinator.Context> {
 
     override func make() -> UIViewController? {
         let locationVC = assembly.locationsVC()
-
-//        locationVC.selectLocation = { [weak locationVC] locationData in
-//            let coordinator = self.assembly.charactersCoordinator()
-//            guard let characterVC = coordinator.make() else {
-//                return
-//            }
-//            locationVC?.navigationController?.pushViewController(characterVC, animated: true)
-//        }
-
         locationVC.selectLocation = { [weak locationVC] locationData in
             let coordinator = self.assembly.charactersCoordinator(data: locationData)
             guard let characterVC = coordinator.make() else {
@@ -30,7 +20,6 @@ class LocationsCoordinator: BaseCoordinator<LocationsCoordinator.Context> {
             }
             locationVC?.navigationController?.pushViewController(characterVC, animated: true)
         }
-
         return locationVC
     }
 }

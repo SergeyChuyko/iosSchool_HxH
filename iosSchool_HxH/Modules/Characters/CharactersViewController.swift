@@ -1,4 +1,10 @@
-import Foundation
+//
+//  CharactersViewController.swift
+//  iosSchool_HxH
+//
+//  Created by Sergo on 21.11.2023.
+//
+
 import UIKit
 
 class CharactersViewController<View: CharactersView>: BaseViewController<View> {
@@ -23,19 +29,15 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let selectClosure: ((CoreCellInputData) -> Void)? = { [weak self] data in
             guard let data = data as? CharactersCellData else {// !data.isLoading else {
                 return
             }
             self?.selectCharacter?(data)
         }
-
         getCharacter(id: 5)
         view.backgroundColor = UIColor(named: "background-color")
-
         setupBackButton()
-
         rootView.setView()
         rootView.update(date: CharactersViewData(cells: charactersUrlList.map { CharactersCellData(url: $0) }))
         charactersUrlList.enumerated().forEach { index, url in
@@ -43,7 +45,6 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                 guard let self = self else {
                     return
                 }
-
                 DispatchQueue.main.async {
                     self.rootView.updateCharacter(index: index, with: CharactersCellData.init(
                         character: character,
@@ -52,7 +53,6 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
                         selectClosure: selectClosure
                     ))
                 }
-
                 self.imageSerivce.getImage(url: character.image, completion: { [weak self] image in
                     DispatchQueue.main.async {
                         self?.rootView.updateCharacter(index: index, with: CharactersCellData.init(
@@ -68,10 +68,7 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
     }
 
     func getCharacter(id: Int) {
-        charactersDataProvider.getCharacter(id: id) { character, error in
-            print(character ?? "No character")
-            print(error?.rawValue ?? "No error")
-        }
+        charactersDataProvider.getCharacter(id: id) {_, _ in}
     }
 
     private func requestCharacher(url: String, completion: @escaping (Character) -> Void) {
@@ -80,14 +77,12 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
             return
         }
         DispatchQueue.global().async {
-            self.charactersDataProvider.character(url: url) { [weak self] character, error in
+            self.charactersDataProvider.character(url: url) { [weak self] character, _ in
                 if let character = character {
                     self?.updateQueue.async {
                         self?.characters.append(character)
                         completion(character)
                     }
-                } else {
-                    print(error ?? "error")
                 }
             }
         }

@@ -9,7 +9,6 @@ import UIKit
 
 struct PersonEpisodeCellData: CoreCellInputData {
     var selectClosure: ((CoreCellInputData) -> Void)?
-
     let name: String?
     let airDate: String?
     let number: String

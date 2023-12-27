@@ -25,5 +25,4 @@ extension Assembly: CabinetAssembly {
     func cabinetCoordinator(logout: (() -> Void)?) -> CabinetCoordinator {
         CabinetCoordinator(assembly: self, context: .init(logout: logout))
     }
-
 }

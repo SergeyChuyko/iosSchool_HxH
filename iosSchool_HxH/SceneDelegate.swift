@@ -8,7 +8,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
     private lazy var appCoordinator: AppCoordinator? = {
@@ -25,25 +24,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .white
         appCoordinator?.start(window: window)
-    }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
-
-    }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-
     }
 }

@@ -5,13 +5,11 @@
 //  Created by Sergo on 06.11.2023.
 //
 
-import Foundation
 import UIKit
 
 struct CoordinatorContext {}
 
 class AppCoordinator: BaseCoordinator<CoordinatorContext> {
-
     private var window: UIWindow?
 
     func start(window: UIWindow?) {
@@ -19,7 +17,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.splashCoordinator { [weak self] in
             self?.authBootstrap()
         }
-
         setRoot(viewController: coordinator.make())
     }
 
@@ -28,7 +25,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
             setTabVC()
             return
         }
-
         let authCoordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
                 self?.setTabVC()
@@ -49,11 +45,9 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         guard let cabinetVC = cabinetCoord.make() else {
             return
         }
-
         let navVC = assembly.rootNavigationController()
         navVC.setViewControllers([locationsVC], animated: false)
         navVC.tabBarItem = RootTab.locations.tabBarItem
-
         cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
         tabVC.setViewControllers([navVC, cabinetVC], animated: false)
         setRoot(viewController: tabVC)

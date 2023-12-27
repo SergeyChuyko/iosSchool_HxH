@@ -5,7 +5,6 @@
 //  Created by Sergo on 21.11.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol CharactersView: UIView {
@@ -18,7 +17,6 @@ protocol CharactersView: UIView {
 
 class CharactersViewImp: UIView, CharactersView {
     var selectCharacter: ((CharactersCellData) -> Void)?
-
     private var section: CoreSection?
     private var viewData: CharactersViewData?
 
@@ -64,7 +62,6 @@ class CharactersViewImp: UIView, CharactersView {
             guard let charactrersSection = self.section else {
                 return nil
             }
-
             guard let layoutSection = charactrersSection.sectionLayoutProvider?(section, env) else {
                 return nil
             }
@@ -73,7 +70,7 @@ class CharactersViewImp: UIView, CharactersView {
     }
 }
 
-// MARK: - UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
 extension CharactersViewImp: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,12 +82,11 @@ extension CharactersViewImp: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         section?.cell(collectionView: collectionView, indexPath: indexPath) ?? UICollectionViewCell()
-
     }
-
 }
 
-// MARK: - UICollectionViewDelegate
+    // MARK: - UICollectionViewDelegate
+
 extension CharactersViewImp: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         section?.selectCell(at: indexPath.item)

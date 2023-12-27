@@ -8,8 +8,8 @@
 import UIKit
 
 class PersonAvatarCell: UICollectionViewCell, CoreCellView {
-
     @IBOutlet private weak var characterImageView: UIImageView!
+
     static func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -32,11 +32,13 @@ class PersonAvatarCell: UICollectionViewCell, CoreCellView {
     }
 
     // MARK: - Functions
+
     func update(with inputData: PersonAvatarCellData) {
         characterImageView.image = inputData.image
     }
 
     // MARK: - Private function
+
     private func cellSettings() {
         layer.cornerRadius = 15
         layer.masksToBounds = false

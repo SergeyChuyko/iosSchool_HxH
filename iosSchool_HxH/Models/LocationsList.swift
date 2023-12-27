@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct LocationsList: Decodable {
     struct Info: Codable {
         let count: Int

@@ -8,7 +8,6 @@
 import UIKit
 
 class PersonViewController<View: PersonView>: BaseViewController<View> {
-
     private let dataProvider: PersonDataProvider
     private var episodes: [Episode] = []
     private let episodesUrlList: [String]

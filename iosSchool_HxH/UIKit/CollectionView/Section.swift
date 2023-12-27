@@ -1,14 +1,13 @@
 //
 //  Section.swift
-//  iosSchool_HH
+//  iosSchool_HxH
 //
-//  Created by Анна Ваганова on 07.12.2023.
+//  Created by Sergo on 07.12.2023.
 //
 
 import UIKit
 
 class Section<Cell: CoreCellView, Header: CoreReusableView, Footer: CoreReusableView>: CoreSection {
-
     lazy var sectionLayoutProvider: UICollectionViewCompositionalLayoutSectionProvider? = {
         let sectionLayoutProvider: UICollectionViewCompositionalLayoutSectionProvider
         sectionLayoutProvider = { [unowned self] _, env -> NSCollectionLayoutSection? in
@@ -25,10 +24,10 @@ class Section<Cell: CoreCellView, Header: CoreReusableView, Footer: CoreReusable
     var isContainsFooter: Bool {
         footerData != nil
     }
-
     var headerData: Header.InputData?
     var footerData: Footer.InputData?
     var cellsData: [Cell.InputData]
+
     private weak var collectionView: UICollectionView?
 
     init(
@@ -48,7 +47,6 @@ class Section<Cell: CoreCellView, Header: CoreReusableView, Footer: CoreReusable
 
     func registrate(collectionView: UICollectionView) {
         self.collectionView = collectionView
-
         collectionView.registerCell(cellType: Cell.self)
         collectionView.registerHeader(viewType: Header.self)
         collectionView.registerFooter(viewType: Footer.self)
@@ -111,10 +109,9 @@ class Section<Cell: CoreCellView, Header: CoreReusableView, Footer: CoreReusable
     }
 }
 
-// MARK: - Items layout
+    // MARK: - Items layout
 
 private extension Section {
-
     func layoutSection(env: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
         guard !cellsData.isEmpty else {
             return nil

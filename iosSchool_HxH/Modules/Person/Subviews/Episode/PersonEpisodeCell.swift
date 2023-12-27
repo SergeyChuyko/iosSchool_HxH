@@ -8,7 +8,6 @@
 import UIKit
 
 class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
-
     @IBOutlet private weak var numberView: UIView!
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var episodeNameLabel: UILabel!
@@ -31,6 +30,7 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         cellSettings()

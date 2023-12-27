@@ -5,7 +5,6 @@
 //  Created by Sergo on 09.11.2023.
 //
 
-import Foundation
 import UIKit
 
 class SplashCoordinator: BaseCoordinator<SplashCoordinator.Context> {

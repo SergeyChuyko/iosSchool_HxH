@@ -5,7 +5,6 @@
 //  Created by Sergo on 11.11.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol RegistrationView: UIView {
@@ -19,7 +18,6 @@ protocol RegistrationViewDelegate: AnyObject {
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
-
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var backgroundimageView: UIImageView!
@@ -37,7 +35,6 @@ class RegistrationViewImp: UIView, RegistrationView {
     }
 
     func setViewRegistration() {
-
         isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
@@ -84,12 +81,12 @@ class RegistrationViewImp: UIView, RegistrationView {
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
             attributes: [NSAttributedString.Key.foregroundColor:
-                UIColor(
-                    red: 0.318,
-                    green: 0.306,
-                    blue: 0.306,
-                    alpha: 1
-            )]
+                            UIColor(
+                                red: 0.318,
+                                green: 0.306,
+                                blue: 0.306,
+                                alpha: 1
+                            )]
         )
         textField.placeholder = placeholderText
         textField.layer.cornerRadius = 15

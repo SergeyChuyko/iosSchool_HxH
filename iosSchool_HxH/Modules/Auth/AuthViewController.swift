@@ -10,7 +10,6 @@ import SPIndicator
 import PKHUD
 
 class AuthViewController<View: AuthView>: BaseViewController<View> {
-
     var onOpenRegistration: (() -> Void)?
 
     private var onOpenLogin: (() -> Void)?
@@ -24,7 +23,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
             self.dataProvider = dataProvider
             self.onOpenLogin = onOpenLogin
             self.storageManager = storageManager
-
             super.init(nibName: nil, bundle: nil)
         }
 
@@ -34,23 +32,13 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         rootView.setView()
         rootView.delegate = self
-
-        someLogin()
-    }
-
-    func someLogin() {
-        dataProvider.auth(login: "SomeTest", password: "12345678") { token, error in
-            print(token ?? "No token")
-            print(error?.rawValue ?? "no error")
-        }
 
     }
 }
 
-    // MARK: - AuthViewDelegate
+// MARK: - AuthViewDelegate
 
 extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {

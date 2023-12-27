@@ -5,7 +5,6 @@
 //  Created by Sergo on 21.11.2023.
 //
 
-import Foundation
 import UIKit
 
 class LocationsViewController<View: LocationsView>: BaseViewController<View> {
@@ -34,6 +33,7 @@ class LocationsViewController<View: LocationsView>: BaseViewController<View> {
     }
 
     // MARK: - Private func
+
     private func setupBar() {
         title = "Выбор планеты"
         navigationController?.navigationBar.titleTextAttributes = [
@@ -52,9 +52,8 @@ class LocationsViewController<View: LocationsView>: BaseViewController<View> {
     }
 
     private func getListOfLocation() {
-        locationsDataProvider.getLocations { [weak self] locationList, error in
+        locationsDataProvider.getLocations { [weak self] locationList, _ in
             guard let locationList else {
-                print(error ?? "no error")
                 return
             }
             self?.rootView.update(data: LocationsViewData(list: locationList))

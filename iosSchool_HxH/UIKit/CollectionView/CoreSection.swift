@@ -1,14 +1,13 @@
 //
 //  CoreSection.swift
-//  iosSchool_HH
+//  iosSchool_HxH
 //
-//  Created by Анна Ваганова on 07.12.2023.
+//  Created by Sergo on 07.12.2023.
 //
 
 import UIKit
 
 protocol CoreSection: AnyObject {
-
     var sectionLayoutProvider: UICollectionViewCompositionalLayoutSectionProvider? { get }
     var numberOfItem: Int { get }
     var isContainsHeader: Bool { get }

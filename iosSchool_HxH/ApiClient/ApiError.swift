@@ -8,7 +8,9 @@
 import Foundation
 
 enum ApiError: Error {
-    case dataParsing, serverError, common(Data?)
+    case dataParsing
+    case serverError
+    case common(Data?)
 
     var rawValue: String {
         switch self {

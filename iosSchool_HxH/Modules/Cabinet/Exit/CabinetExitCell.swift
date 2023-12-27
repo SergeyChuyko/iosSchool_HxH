@@ -8,7 +8,6 @@
 import UIKit
 
 class CabinetExitCell: UICollectionViewCell, CoreCellView {
-
     @IBOutlet private weak var exitLabel: UILabel!
 
     override func awakeFromNib() {
@@ -41,6 +40,5 @@ class CabinetExitCell: UICollectionViewCell, CoreCellView {
         return section
     }
 
-    func update(with inputData: CabinetExitCellData) {
-    }
+    func update(with inputData: CabinetExitCellData) {}
 }

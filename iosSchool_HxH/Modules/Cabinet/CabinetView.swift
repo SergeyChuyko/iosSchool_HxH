@@ -5,7 +5,6 @@
 //  Created by Sergo on 16.12.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol CabinetView: UIView {
@@ -14,7 +13,6 @@ protocol CabinetView: UIView {
 }
 
 class CabinetViewImp: UIView, CabinetView {
-
     private var sections: [CoreSection] = []
 
     private lazy var collectionView: UICollectionView = {
@@ -28,7 +26,6 @@ class CabinetViewImp: UIView, CabinetView {
         collectionView.backgroundColor = UIColor(named: "background-color")
         collectionView.dataSource = self
         collectionView.delegate = self
-
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(collectionView)
         collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
@@ -81,10 +78,9 @@ class CabinetViewImp: UIView, CabinetView {
     }
 }
 
-// MARK: - UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
 extension CabinetViewImp: UICollectionViewDataSource {
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
@@ -115,7 +111,7 @@ extension CabinetViewImp: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDelegate
+    // MARK: - UICollectionViewDelegate
 
 extension CabinetViewImp: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

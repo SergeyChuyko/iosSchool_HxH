@@ -13,7 +13,6 @@ protocol CharactersDataProvider {
         onRequestCompleted: @escaping (Character?, ApiError?) -> Void
     )
     func character(url: String, onRequestCompleted: @escaping (Character?, ApiError?) -> Void)
-
 }
 
 class CharactersDataProviderImp: CharactersDataProvider {

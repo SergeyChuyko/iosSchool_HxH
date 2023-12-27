@@ -8,7 +8,6 @@
 import UIKit
 
 class LocationCell: UITableViewCell {
-
     var data: LocationsCellData? {
         didSet {
             guard let data else {
@@ -27,7 +26,6 @@ class LocationCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = .clear
         transitionImageView.image = UIImage(named: "next-image")
-
         sizeSetting(to: nameLabel)
         sizeSetting(to: typeLocationLabel)
         sizeSetting(to: populationLabel)

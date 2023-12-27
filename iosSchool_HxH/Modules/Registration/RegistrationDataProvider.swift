@@ -16,7 +16,6 @@ protocol RegistrationDataProvider {
 }
 
 class RegistrationDataProviderImp: RegistrationDataProvider {
-
     private let registrationApiClient: RegistrationApiClient
 
     init(registrationApiClient: RegistrationApiClient) {

@@ -8,16 +8,13 @@
 import UIKit
 
 struct CharactersCellData: CoreCellInputData {
-
     var selectClosure: ((CoreCellInputData) -> Void)?
     let url: String
     let isLoading: Bool
     let name: String?
     let imageUrl: String?
     let image: UIImage?
-
     let type: String?
-
     let episodes: [String]
 
     init(character: Character, isLoading: Bool, image: UIImage?, selectClosure: ((CoreCellInputData) -> Void)?) {
@@ -26,12 +23,9 @@ struct CharactersCellData: CoreCellInputData {
         name = character.name
         imageUrl = character.image
         self.image = image
-
         type = character.gender.rawValue + " " + character.species
-
         self.selectClosure = selectClosure
         episodes = character.episode
-
     }
 
     init(url: String) {

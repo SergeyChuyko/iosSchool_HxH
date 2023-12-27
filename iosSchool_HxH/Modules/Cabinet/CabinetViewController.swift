@@ -8,7 +8,6 @@
 import UIKit
 
 class CabinetViewController<View: CabinetView>: BaseViewController<View> {
-
     private var logout: (() -> Void)?
     private let storageManager: StorageManager
     private let dateManager: DateManager
@@ -17,9 +16,9 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
         self.logout = logout
         self.storageManager = storageManager
         self.dateManager = dateManager
-
         super.init(nibName: nil, bundle: nil)
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

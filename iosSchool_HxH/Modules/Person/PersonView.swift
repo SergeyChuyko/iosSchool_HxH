@@ -14,9 +14,7 @@ protocol PersonView: UIView {
 }
 
 class PersonViewImp: UIView, PersonView {
-
     private var sections: [CoreSection] = []
-
     private lazy var collectionView: UICollectionView = {
         UICollectionView(
             frame: .zero,
@@ -74,7 +72,6 @@ class PersonViewImp: UIView, PersonView {
             case .episodes:
                 return PersonEpisodeSection(cellsData: data.episodeData, headerData: data.episodeHeader)
             }
-
         }
     }
 
@@ -86,29 +83,11 @@ class PersonViewImp: UIView, PersonView {
             return layoutSection
         }
     }
-//
-//    func update(data: CharacterViewData) {
-//        section = CharactersSection(cellsData: data.cells)
-//        section?.registrate(collectionView: collectionView)
-//        collectionView.reloadData()
-//    }
-//
-//    func updateCharacter(idx: Int, with data: CharacterCellData) {
-//        section?.updateCell(at: IndexPath(item: idx, section: 0), with: data)
-//        guard let cell = section?.cell(
-//            collectionView: collectionView,
-//            indexPath: IndexPath(item: idx, section: 0)
-//            ) as? CharacterCell else {
-//            return
-//        }
-//        cell.update(with: data)
-//    }
 }
 
-// MARK: - UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
 extension PersonViewImp: UICollectionViewDataSource {
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }

@@ -8,7 +8,6 @@
 import UIKit
 
 class CabinetLoginCell: UICollectionViewCell, CoreCellView {
-
     @IBOutlet private weak var loginLabel: UILabel!
 
     static func layoutSection() -> NSCollectionLayoutSection {

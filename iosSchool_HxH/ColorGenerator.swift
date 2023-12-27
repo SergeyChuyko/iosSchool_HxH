@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 struct Color {
@@ -6,9 +5,7 @@ struct Color {
     let red: Double
     let green: Double
     let blue: Double
-    func description() {
-        print("R: \(red), ALPHA: \(alpha.rawValue)")
-    }
+
     init(red: Double, green: Double, blue: Double) {
         self.alpha = .dim
         self.red = red
@@ -28,18 +25,14 @@ class ColorGenerator: ColorGeneratorProtocol {
     var alpha: Double
     var colorCodes: [ Double ] = [0, 51, 102, 153, 204, 255]
     let whireColor: UIColor = .white
+
     required init(alpha: Double) {
         self.alpha = alpha
     }
 
-    func changeColorCodes(completion: ([Double]) -> Void) {
-        completion([])
+    func changeColorCodes(completion: ([Double]) -> Void) {}
 
-    }
-
-    func changeColor(completion: () -> [Double]) {
-        print(completion())
-    }
+    func changeColor(completion: () -> [Double]) {}
 
     func test() {
         changeColorCodes { [weak self] newColorCodes in
@@ -59,27 +52,17 @@ class ColorGenerator: ColorGeneratorProtocol {
         [element]
     }
 
-    func printAlpha<Generator>(generator: Generator) where Generator: ColorGeneratorProtocol {
-        print(generator.alpha)
-    }
-
-    func printAlphaSecond<T: ColorGeneratorProtocol>(generator: T) {
-        print(generator.alpha)
-    }
-
     func printAnyAlpha(generator: Any) {
         _ = generator as? ColorGeneratorProtocol
-
         guard let generator = generator as? ColorGeneratorProtocol else {return}
-        print(generator.alpha)
     }
-
 }
 
 enum Brightness: Double {
     case dim = 0.1
     case average = 0.5
     case bright = 1
+
     func description() -> String {
         switch self {
         case .dim: return "Тусклый"
@@ -88,6 +71,7 @@ enum Brightness: Double {
         }
     }
 }
+
 extension ColorGeneratorProtocol {
     func createColorv() -> UIColor {
         UIColor(white: 1, alpha: alpha)
@@ -100,5 +84,4 @@ class Paletta<CustomColor> {
     init(colors: [CustomColor]) {
         self.colors = colors
     }
-
 }

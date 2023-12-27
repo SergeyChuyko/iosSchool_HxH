@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct CabinetExitCellData: CoreCellInputData {
     var selectClosure: ((CoreCellInputData) -> Void)?
 }
