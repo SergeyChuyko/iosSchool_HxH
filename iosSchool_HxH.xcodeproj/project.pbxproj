@@ -97,9 +97,8 @@
 		35A6B0FB2B2B0F3300CC3F06 /* PersonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6B0FA2B2B0F3300CC3F06 /* PersonCoordinator.swift */; };
 		35A6B0FD2B2B1F9D00CC3F06 /* PersonApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6B0FC2B2B1F9D00CC3F06 /* PersonApiClient.swift */; };
 		35B136932B18CC7700A97E10 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B136922B18CC7700A97E10 /* ImageService.swift */; };
-		35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E582AE69BD700E10B2A /* ColorGenerator.swift */; };
 		35D05E5F2AEAA5CE00E10B2A /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */; };
-		35D5E4CC2B0F884000E44F0A /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4CB2B0F884000E44F0A /* TapBarController.swift */; };
+		35D5E4CC2B0F884000E44F0A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4CB2B0F884000E44F0A /* TabBarController.swift */; };
 		35D5E4CF2B0F88A300E44F0A /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4CE2B0F88A300E44F0A /* RootTab.swift */; };
 		35D5E4D12B0F894900E44F0A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */; };
 		35D5E4D42B0F925D00E44F0A /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 35D5E4D32B0F925D00E44F0A /* SPIndicator */; };
@@ -214,9 +213,8 @@
 		35A6B0FA2B2B0F3300CC3F06 /* PersonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCoordinator.swift; sourceTree = "<group>"; };
 		35A6B0FC2B2B1F9D00CC3F06 /* PersonApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonApiClient.swift; sourceTree = "<group>"; };
 		35B136922B18CC7700A97E10 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		35D05E582AE69BD700E10B2A /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		35D05E5E2AEAA5CE00E10B2A /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-		35D5E4CB2B0F884000E44F0A /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
+		35D5E4CB2B0F884000E44F0A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		35D5E4CE2B0F88A300E44F0A /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
 		35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		35D5E4D92B0FC0D800E44F0A /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
@@ -339,7 +337,7 @@
 			children = (
 				3513C7792AF9184E0044D80B /* BaseCoordinator.swift */,
 				3513C7CA2B06408F0044D80B /* BaseViewController.swift */,
-				35D5E4CB2B0F884000E44F0A /* TapBarController.swift */,
+				35D5E4CB2B0F884000E44F0A /* TabBarController.swift */,
 				35D5E4D02B0F894900E44F0A /* BaseNavigationController.swift */,
 			);
 			path = Common;
@@ -530,7 +528,6 @@
 				3513C77D2AF9222E0044D80B /* Modules */,
 				359CCE442AE119D20079EEA1 /* AppDelegate.swift */,
 				359CCE462AE119D20079EEA1 /* SceneDelegate.swift */,
-				35D05E582AE69BD700E10B2A /* ColorGenerator.swift */,
 				359CCE4D2AE119D30079EEA1 /* Assets.xcassets */,
 				359CCE4F2AE119D30079EEA1 /* LaunchScreen.storyboard */,
 				359CCE522AE119D30079EEA1 /* Info.plist */,
@@ -726,7 +723,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A6B0FD2B2B1F9D00CC3F06 /* PersonApiClient.swift in Sources */,
-				35D5E4CC2B0F884000E44F0A /* TapBarController.swift in Sources */,
+				35D5E4CC2B0F884000E44F0A /* TabBarController.swift in Sources */,
 				3513C78F2AFD12EC0044D80B /* SplashView.swift in Sources */,
 				35D05E5F2AEAA5CE00E10B2A /* Assembly.swift in Sources */,
 				35185F222B36E82B00AED173 /* PersonHeaderView.swift in Sources */,
@@ -751,7 +748,6 @@
 				35265A202B21FD6F001FDECB /* UICollectionView+Registrate.swift in Sources */,
 				35185EF92B36E77500AED173 /* CabinetExitCellData.swift in Sources */,
 				35A6B0F32B2B0EAE00CC3F06 /* PersonViewController.swift in Sources */,
-				35D05E592AE69BD700E10B2A /* ColorGenerator.swift in Sources */,
 				35E1C4772B0CC37A00A66EE5 /* LocationsView.swift in Sources */,
 				35185F082B36E7A300AED173 /* CabinetView.swift in Sources */,
 				35185EFA2B36E77500AED173 /* CabinetExitCell.swift in Sources */,

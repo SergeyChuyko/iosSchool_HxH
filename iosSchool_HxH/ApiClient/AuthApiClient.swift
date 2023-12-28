@@ -8,14 +8,19 @@
 import Foundation
 
 protocol AuthApiClient {
-    func auth(login: String,
-              password: String,
-              onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
+    func auth(
+        login: String,
+        password: String,
+        onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
     )
 }
 
 extension ApiClient: AuthApiClient {
-    func auth(login: String, password: String, onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void) {
+    func auth(
+        login: String,
+        password: String,
+        onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
+    ) {
         let url = NetworkConstants.URLStrings.nanoPost + "/auth/login?username=\(login)&password=\(password)"
         performRequest(url: url, data: nil, method: .get) { (result: Result<TokenResponse, ApiError>) in
             switch result {

@@ -80,13 +80,14 @@ class RegistrationViewImp: UIView, RegistrationView {
     private func applyTextFieldStyles(to textField: UITextField, placeholderText: String) {
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
-            attributes: [NSAttributedString.Key.foregroundColor:
-                            UIColor(
-                                red: 0.318,
-                                green: 0.306,
-                                blue: 0.306,
-                                alpha: 1
-                            )]
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor(
+                    red: 0.318,
+                    green: 0.306,
+                    blue: 0.306,
+                    alpha: 1
+                )
+            ]
         )
         textField.placeholder = placeholderText
         textField.layer.cornerRadius = 15
@@ -98,6 +99,8 @@ class RegistrationViewImp: UIView, RegistrationView {
         textField.leftViewMode = .always
         textField.backgroundColor = .white
     }
+
+    // MARK: - Private methods
 
     private func applyShadows(to view: UIView) {
         view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor

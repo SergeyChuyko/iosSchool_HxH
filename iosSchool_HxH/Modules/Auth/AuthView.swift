@@ -36,7 +36,7 @@ class AuthViewImp: UIView, AuthView {
 
     func setView() {
         isUserInteractionEnabled = true
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidPat))
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
         backgroundColor = UIColor(named: "background-color")
         imageView.image = UIImage(named: "auth-background")
@@ -135,7 +135,7 @@ class AuthViewImp: UIView, AuthView {
         scrollView.verticalScrollIndicatorInsets = .zero
     }
 
-    @objc private func viewDidPat() {
+    @objc private func viewDidTap() {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }

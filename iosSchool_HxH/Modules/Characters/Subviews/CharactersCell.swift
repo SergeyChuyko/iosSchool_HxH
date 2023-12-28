@@ -52,6 +52,8 @@ class CharactersCell: UICollectionViewCell, CoreCellView {
         }
     }
 
+    // MARK: - Private methods
+
     private func startLoading() {
         imageView.image = UIImage(named: "placeholder-image")
         activityIndicatorView.startAnimating()

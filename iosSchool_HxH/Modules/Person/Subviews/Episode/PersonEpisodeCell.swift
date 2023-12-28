@@ -42,6 +42,8 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
         dateLabel.text = inputData.airDate
     }
 
+    // MARK: - Private methods
+
     private func cellSettings() {
         layer.cornerRadius = 15
         layer.masksToBounds = false

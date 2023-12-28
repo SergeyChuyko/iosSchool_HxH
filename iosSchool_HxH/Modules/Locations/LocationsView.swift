@@ -56,7 +56,6 @@ class LocationsViewImp: UIView, LocationsView {
             self.tableView.reloadData()
         }
     }
-
 }
 
 extension LocationsViewImp: UITableViewDataSource {
@@ -73,7 +72,6 @@ extension LocationsViewImp: UITableViewDataSource {
         cell.separatorInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
         return cell
     }
-
 }
 
 extension LocationsViewImp: UITableViewDelegate {

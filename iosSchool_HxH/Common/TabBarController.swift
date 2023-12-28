@@ -1,5 +1,5 @@
 //
-//  TapBarController.swift
+//  TabBarController.swift
 //  iosSchool_HxH
 //
 //  Created by Sergo on 23.11.2023.

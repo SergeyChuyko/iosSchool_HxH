@@ -12,17 +12,19 @@ import SPIndicator
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
     private let registrationDataProvider: RegistrationDataProvider
     private let storageManager: StorageManager
+
     var onRegistrationSuccess: (() -> Void)?
 
     init(
         registrationDataProvider: RegistrationDataProvider,
         storageManager: StorageManager,
-        onRegistrationSuccess: (() -> Void)?) {
-            self.registrationDataProvider = registrationDataProvider
-            self.onRegistrationSuccess = onRegistrationSuccess
-            self.storageManager = storageManager
-            super.init(nibName: nil, bundle: nil)
-        }
+        onRegistrationSuccess: (() -> Void)?
+    ) {
+        self.registrationDataProvider = registrationDataProvider
+        self.onRegistrationSuccess = onRegistrationSuccess
+        self.storageManager = storageManager
+        super.init(nibName: nil, bundle: nil)
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

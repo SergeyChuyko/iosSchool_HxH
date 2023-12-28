@@ -19,12 +19,13 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     init(
         dataProvider: AuthDataProvider,
         storageManager: StorageManager,
-        onOpenLogin: (() -> Void)?) {
-            self.dataProvider = dataProvider
-            self.onOpenLogin = onOpenLogin
-            self.storageManager = storageManager
-            super.init(nibName: nil, bundle: nil)
-        }
+        onOpenLogin: (() -> Void)?
+    ) {
+        self.dataProvider = dataProvider
+        self.onOpenLogin = onOpenLogin
+        self.storageManager = storageManager
+        super.init(nibName: nil, bundle: nil)
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -34,7 +35,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         super.viewDidLoad()
         rootView.setView()
         rootView.delegate = self
-
     }
 }
 
@@ -54,9 +54,9 @@ extension AuthViewController: AuthViewDelegate {
                 return
             }
             self.storageManager.saveToken(token: token)
-            self.onOpenLogin?()
             self.storageManager.saveRegisterLogin(registerLogin: login)
             self.storageManager.saveLastEntryDate()
+            self.onOpenLogin?()
         }
     }
 

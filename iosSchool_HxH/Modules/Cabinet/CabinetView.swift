@@ -78,7 +78,7 @@ class CabinetViewImp: UIView, CabinetView {
     }
 }
 
-    // MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
 extension CabinetViewImp: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -95,7 +95,8 @@ extension CabinetViewImp: UICollectionViewDataSource {
     ) -> UICollectionViewCell {
         sections[indexPath.section].cell(
             collectionView: collectionView,
-            indexPath: indexPath) ?? UICollectionViewCell()
+            indexPath: indexPath)
+        ?? UICollectionViewCell()
     }
 
     func collectionView(
@@ -111,7 +112,7 @@ extension CabinetViewImp: UICollectionViewDataSource {
     }
 }
 
-    // MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 
 extension CabinetViewImp: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -46,13 +46,13 @@ class PersonViewImp: UIView, PersonView {
     }
 
     func updateEpisode(idx: Int, with data: PersonEpisodeCellData) {
-        guard let index = sections.firstIndex(where: { $0 is PersonEpisodeSection }) else {
+        guard let sectionIdx = sections.firstIndex(where: { $0 is PersonEpisodeSection }) else {
             return
         }
-        sections[index].updateCell(at: IndexPath(item: idx, section: idx), with: data)
-        guard let cell = sections[index].cell(
+        sections[sectionIdx].updateCell(at: IndexPath(item: idx, section: sectionIdx), with: data)
+        guard let cell = sections[sectionIdx].cell(
             collectionView: collectionView,
-            indexPath: IndexPath(item: idx, section: idx)
+            indexPath: IndexPath(item: idx, section: sectionIdx)
         ) as? PersonEpisodeCell else {
             return
         }
@@ -85,7 +85,7 @@ class PersonViewImp: UIView, PersonView {
     }
 }
 
-    // MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
 extension PersonViewImp: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -102,7 +102,8 @@ extension PersonViewImp: UICollectionViewDataSource {
     ) -> UICollectionViewCell {
         sections[indexPath.section].cell(
             collectionView: collectionView,
-            indexPath: indexPath) ?? UICollectionViewCell()
+            indexPath: indexPath
+        ) ?? UICollectionViewCell()
     }
 
     func collectionView(

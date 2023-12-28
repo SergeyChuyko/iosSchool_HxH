@@ -32,7 +32,6 @@ class StorageManagerImp: StorageManager {
             print(error as Any)
         }
         saveFirstLaunch()
-
     }
 
     func saveToken(token: TokenResponse) {

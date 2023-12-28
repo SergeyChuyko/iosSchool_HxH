@@ -30,12 +30,11 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         let selectClosure: ((CoreCellInputData) -> Void)? = { [weak self] data in
-            guard let data = data as? CharactersCellData else {// !data.isLoading else {
+            guard let data = data as? CharactersCellData else {
                 return
             }
             self?.selectCharacter?(data)
         }
-        getCharacter(id: 5)
         view.backgroundColor = UIColor(named: "background-color")
         setupBackButton()
         rootView.setView()
@@ -67,9 +66,7 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
         }
     }
 
-    func getCharacter(id: Int) {
-        charactersDataProvider.getCharacter(id: id) {_, _ in}
-    }
+    // MARK: - Private methods
 
     private func requestCharacher(url: String, completion: @escaping (Character) -> Void) {
         if let character = characters.first(where: { $0.url == url }) {
@@ -78,11 +75,12 @@ class CharactersViewController<View: CharactersView>: BaseViewController<View> {
         }
         DispatchQueue.global().async {
             self.charactersDataProvider.character(url: url) { [weak self] character, _ in
-                if let character = character {
-                    self?.updateQueue.async {
-                        self?.characters.append(character)
-                        completion(character)
-                    }
+                guard let character = character else {
+                    return
+                }
+                self?.updateQueue.async {
+                    self?.characters.append(character)
+                    completion(character)
                 }
             }
         }

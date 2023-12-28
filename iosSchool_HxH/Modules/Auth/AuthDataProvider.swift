@@ -8,9 +8,10 @@
 import Foundation
 
 protocol AuthDataProvider {
-    func auth(login: String,
-              password: String,
-              onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
+    func auth(
+        login: String,
+        password: String,
+        onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
     )
 }
 
@@ -21,9 +22,10 @@ class AuthDataProviderImp: AuthDataProvider {
         self.apiClient = apiClient
     }
 
-    func auth(login: String,
-              password: String,
-              onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
+    func auth(
+        login: String,
+        password: String,
+        onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
     ) {
         apiClient.auth(login: login, password: password, onRequestCompleted: onRequestCompleted)
     }
