@@ -77,7 +77,7 @@ class PersonViewImp: UIView, PersonView {
 
     private func layout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { [unowned self] section, env -> NSCollectionLayoutSection? in
-            guard let layoutSection = sections[section] .sectionLayoutProvider?(section, env) else {
+            guard let layoutSection = sections[section].sectionLayoutProvider?(section, env) else {
                 return nil
             }
             return layoutSection

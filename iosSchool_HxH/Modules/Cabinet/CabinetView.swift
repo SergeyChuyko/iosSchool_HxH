@@ -95,8 +95,8 @@ extension CabinetViewImp: UICollectionViewDataSource {
     ) -> UICollectionViewCell {
         sections[indexPath.section].cell(
             collectionView: collectionView,
-            indexPath: indexPath)
-        ?? UICollectionViewCell()
+            indexPath: indexPath
+        ) ?? UICollectionViewCell()
     }
 
     func collectionView(
